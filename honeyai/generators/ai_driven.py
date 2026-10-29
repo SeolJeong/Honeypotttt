@@ -18,6 +18,7 @@ genuine adaptive behaviour you want for real results.
 """
 from __future__ import annotations
 
+import os
 import random
 
 from honeyai.schema import Session, ActorLabel, EvasionStrategy
