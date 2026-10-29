@@ -177,7 +177,10 @@ def gen_ai_live(sid: str, task: Task, model_family: str,
               f"TASK: {task.goal}\n"
               f"Respond with exactly one shell command per turn, nothing else."
               f"{evasion_note}")
-    convo: list[dict] = []
+    # Seed with a user turn so the first API call is valid (Anthropic rejects an
+    # empty messages list and requires the conversation to start with 'user').
+    convo: list[dict] = [{"role": "user",
+                          "content": "You are at the shell prompt. Enter your first command."}]
     progress = 0.0
     for _ in range(max_steps):
         t0 = time.time()
