@@ -60,6 +60,7 @@ honeyai/
   attack_mapping.py      # command -> MITRE ATT&CK (the "what type of attack" layer)
   features/sequence.py   # per-step encoding for Model 2
   dashboard/app.py       # SIEM dashboard: WHO (ML) + WHAT (ATT&CK) + threat
+  parsers/cowrie.py      # parse Cowrie JSON log -> schema (unlabelled wild traffic)
 scripts/
   train_qlora.py         # Model 3 QLoRA fine-tune skeleton (run on GPU)
   generate_ai_sessions.py# generate REAL AI sessions via OpenAI/Anthropic/Ollama
