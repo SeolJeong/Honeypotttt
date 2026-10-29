@@ -155,7 +155,11 @@ def call_llm(system_prompt: str, conversation: list[dict],
             # retry with only the essential, version-stable arguments.
             kwargs.pop("temperature", None)
             resp = client.messages.create(**kwargs)
-        return _clean_command(resp.content[0].text)
+        # responses may include a thinking block before the text block; take the
+        # first block that actually carries text.
+        text = next((b.text for b in resp.content
+                     if getattr(b, "type", "") == "text" or hasattr(b, "text")), "")
+        return _clean_command(text)
 
     if provider == "ollama":
         import ollama
