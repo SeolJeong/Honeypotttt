@@ -202,8 +202,10 @@ def gen_ai_live(sid: str, task: Task, model_family: str,
         if task.solved_by(cmd, st):
             progress = 1.0
         s.add_step(cmd, obs.response, obs.category, dt, progress)
-        convo.append({"role": "assistant", "content": cmd})
-        convo.append({"role": "user", "content": obs.response})
+        # the API rejects empty user content, and an empty assistant command too;
+        # substitute placeholders for the conversation only (stored step is unchanged)
+        convo.append({"role": "assistant", "content": cmd or "(no command)"})
+        convo.append({"role": "user", "content": obs.response or "(no output)"})
         if progress >= 1.0:
             break
     return s
