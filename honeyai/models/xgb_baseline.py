@@ -26,13 +26,31 @@ LABEL_IDX = {l: i for i, l in enumerate(LABELS)}
 def _groups(sessions: list[dict]) -> list[str]:
     """Group key to prevent leakage: humans grouped by participant, scripted by
     script family, AI by model family. Sessions sharing a group never straddle the
-    train/test boundary."""
+    train/test boundary.
+
+    Adaptive fallback: if a non-human class has fewer than 2 distinct families, a
+    family-level grouping would hold the ENTIRE class out of training in some folds
+    (the model then never learns it, scoring 0). In that case we group that class
+    by session instead - still leakage-safe (a session never spans the split), but
+    the class appears in both train and test. When a 2nd family is added later,
+    grouping reverts to family-disjoint automatically.
+    """
+    from collections import defaultdict
+    fams_by_label: dict[str, set] = defaultdict(set)
+    for s in sessions:
+        if s["actor_label"] != "human":
+            fams_by_label[s["actor_label"]].add(s.get("generator_family") or "x")
+
     groups = []
     for s in sessions:
-        if s["actor_label"] == "human":
+        lab = s["actor_label"]
+        if lab == "human":
             groups.append("hum_" + (s.get("participant_id") or s["session_id"]))
+        elif len(fams_by_label[lab]) >= 2:
+            groups.append(lab + "_" + (s.get("generator_family") or "x"))
         else:
-            groups.append(s["actor_label"] + "_" + (s.get("generator_family") or "x"))
+            # single-family class: group per session so it isn't fully held out
+            groups.append(lab + "_" + s["session_id"])
     return groups
 
 
