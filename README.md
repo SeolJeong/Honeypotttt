@@ -26,8 +26,10 @@ code change downstream.
 ```bash
 pip install -r requirements.txt
 python scripts/build_dataset.py        # writes data/sessions/poc_dataset.jsonl
-python -m honeyai.models.xgb_baseline  # trains Model 1, prints leakage-safe macro-F1
-python scripts/online_demo.py          # per-command (real-time) scoring demo
+python -m honeyai.models.xgb_baseline  # Model 1 (XGBoost), leakage-safe macro-F1
+python -m honeyai.models.recurrent     # Model 2 (GRU sequence model)
+python scripts/online_demo.py          # per-command scoring, terminal
+python -m honeyai.dashboard.app        # per-command scoring, web dashboard
 ```
 
 ## Layout
@@ -43,9 +45,11 @@ honeyai/
   features/extract.py    # ~25 tabular features for Model 1
   models/
     xgb_baseline.py      # Model 1: XGBoost, grouped leakage-resistant CV
-    # recurrent.py       # Model 2: GRU/LSTM on interleaved sequence  (TODO)
+    recurrent.py         # Model 2: GRU on interleaved sequence
     # llm_qlora.py       # Model 3: QLoRA fine-tuned LM              (TODO)
-  dashboard/             # per-command scoring UI (TODO: Gradio)
+  scoring.py             # shared online-scoring + adaptive-threat score
+  features/sequence.py   # per-step encoding for Model 2
+  dashboard/app.py       # Gradio per-command scoring dashboard
 scripts/
   build_dataset.py       # assemble the full dataset
   online_demo.py         # per-command scoring tracer bullet

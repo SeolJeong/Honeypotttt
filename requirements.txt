@@ -1,10 +1,9 @@
 scikit-learn>=1.4
 xgboost>=2.0
 numpy>=1.26
-# sequence / LLM models (Model 2, Model 3) - add when you build them:
-# torch>=2.2
+torch>=2.2          # Model 2 (GRU sequence model)
+gradio>=4.0         # dashboard
+# Model 3 (QLoRA fine-tuned LM) - add when you build it:
 # transformers>=4.40
 # peft>=0.10
-# bitsandbytes>=0.43
-# dashboard:
-# gradio>=4.0
+# bitsandbytes>=0.43   # GPU only
