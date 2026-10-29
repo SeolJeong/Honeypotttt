@@ -57,8 +57,9 @@ honeyai/
     recurrent.py         # Model 2: GRU on interleaved sequence
     llm_model.py         # Model 3: LM over transcript (tfidf stand-in | qlora on GPU)
   scoring.py             # shared online-scoring + adaptive-threat score
+  attack_mapping.py      # command -> MITRE ATT&CK (the "what type of attack" layer)
   features/sequence.py   # per-step encoding for Model 2
-  dashboard/app.py       # Gradio per-command scoring dashboard
+  dashboard/app.py       # SIEM dashboard: WHO (ML) + WHAT (ATT&CK) + threat
 scripts/
   train_qlora.py         # Model 3 QLoRA fine-tune skeleton (run on GPU)
   generate_ai_sessions.py# generate REAL AI sessions via OpenAI/Anthropic/Ollama

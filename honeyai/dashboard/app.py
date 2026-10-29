@@ -21,6 +21,7 @@ import gradio as gr
 
 from honeyai.schema import read_sessions
 from honeyai.scoring import train_default_scorer
+from honeyai.attack_mapping import map_session, map_command
 
 DATA = os.path.join("data", "sessions", "poc_dataset.jsonl")
 
@@ -54,24 +55,45 @@ def replay(choice, k):
     bars = "".join(_bar(l, r["probs"][l]) for l in ["human", "scripted", "ai-driven"])
     threat_pct = int(r["threat"] * 100)
     threat_colour = "#e03131" if threat_pct >= 60 else "#f08c00" if threat_pct >= 30 else "#2f9e44"
+
+    # WHO
     header = (f"<div style='font:14px sans-serif'>"
-              f"<b>Prediction after step {k}/{n}:</b> "
+              f"<b>WHO &mdash; attacker type after step {k}/{n}:</b> "
               f"<span style='color:#1f2933'>{r['prediction'].upper()}</span><br>"
               f"<b>Adaptive-threat score:</b> "
               f"<span style='color:{threat_colour};font-size:16px'><b>{threat_pct}</b></span>/100</div>")
 
+    # WHAT - ATT&CK techniques seen so far (first k steps)
+    prefix = {**s, "steps": s["steps"][:k]}
+    atk = map_session(prefix)
+    if atk["techniques"]:
+        chips = "".join(
+            f"<span style='display:inline-block;background:#f1f3f5;border:1px solid #dee2e6;"
+            f"border-radius:4px;padding:2px 6px;margin:2px;font:12px sans-serif'>"
+            f"{t}</span>" for t in atk["techniques"])
+        tactics = ", ".join(atk["tactics"].keys())
+        what = (f"<div style='font:13px sans-serif;margin-top:10px'>"
+                f"<b>WHAT &mdash; ATT&CK techniques observed:</b><br>{chips}"
+                f"<br><span style='color:#495057'>Tactics: {tactics}</span></div>")
+    else:
+        what = ("<div style='font:13px sans-serif;margin-top:10px;color:#868e96'>"
+                "<b>WHAT &mdash; ATT&CK:</b> nothing classified yet</div>")
+
+    # transcript with per-command technique tag
     transcript = []
     for j in range(k):
         step = s["steps"][j]
-        transcript.append(f"$ {step['command']}")
+        m = map_command(step["command"])
+        tag = f"   [{m[0]}]" if m else ""
+        transcript.append(f"$ {step['command']}{tag}")
         transcript.append(f"  {step['system_response'][:90]}")
     transcript_txt = "\n".join(transcript)
 
-    truth = (f"<div style='font:12px sans-serif;color:#868e96;margin-top:8px'>"
+    truth = (f"<div style='font:12px sans-serif;color:#868e96;margin-top:10px'>"
              f"ground truth: {s['actor_label']} &middot; family: {s.get('generator_family','')} "
              f"&middot; evasion: {s.get('evasion_strategy','none')}</div>")
 
-    return header + "<br>" + bars + truth, transcript_txt
+    return header + "<br>" + bars + what + truth, transcript_txt
 
 
 def on_select(choice):
@@ -81,8 +103,10 @@ def on_select(choice):
 
 
 with gr.Blocks(title="HoneyAI") as demo:
-    gr.Markdown("# HoneyAI dashboard\nPer-command attacker attribution. "
-                "Pick a session and step through it; the prediction updates after every command.")
+    gr.Markdown("# HoneyAI SIEM dashboard\n"
+                "**WHO** is attacking (human / script / AI) + **WHAT** they are doing "
+                "(MITRE ATT&CK) + **threat** score, updating after every command. "
+                "Pick a session and step through it.")
     with gr.Row():
         with gr.Column(scale=1):
             dd = gr.Dropdown(choices=list(CHOICES.keys()), label="Session",
