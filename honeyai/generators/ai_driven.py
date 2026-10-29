@@ -101,20 +101,68 @@ def generate(n_per_task: int = 6, seed: int = 2,
 # LIVE AI (real API agent loop) - fill in for your provider, run with your keys
 # ---------------------------------------------------------------------------
 
-def call_llm(system_prompt: str, conversation: list[dict]) -> str:
+def _clean_command(text: str) -> str:
+    """Strip code fences / prose so we keep a single shell command line."""
+    text = text.strip()
+    if text.startswith("```"):
+        text = text.strip("`")
+        text = "\n".join(l for l in text.splitlines() if not l.lower().startswith("bash"))
+    # take the first non-empty line, drop a leading prompt char
+    for line in text.splitlines():
+        line = line.strip().lstrip("$").strip()
+        if line:
+            return line
+    return text.strip()
+
+
+def call_llm(system_prompt: str, conversation: list[dict],
+             provider: str | None = None, model: str | None = None) -> str:
     """Return the agent's next shell command given the conversation so far.
 
-    Implement with your provider, e.g. OpenAI / Anthropic. Keep output to a single
-    shell command string. Left unimplemented so the PoC runs offline.
+    Provider is chosen by the `provider` arg or the HONEYAI_PROVIDER env var:
+      "openai"    -> needs OPENAI_API_KEY,    pip install openai
+      "anthropic" -> needs ANTHROPIC_API_KEY, pip install anthropic
+      "ollama"    -> local, no key (http://localhost:11434), pip install ollama
+
+    Keys are read from the environment; never hardcode them. Output is cleaned to a
+    single command line.
     """
-    raise NotImplementedError(
-        "Wire up your LLM provider here, then call gen_ai_live(). "
-        "Use your own API key via environment variable; never hardcode it.")
+    provider = provider or os.environ.get("HONEYAI_PROVIDER", "openai")
+
+    if provider == "openai":
+        from openai import OpenAI
+        client = OpenAI()  # reads OPENAI_API_KEY
+        msgs = [{"role": "system", "content": system_prompt}] + conversation
+        resp = client.chat.completions.create(
+            model=model or os.environ.get("HONEYAI_MODEL", "gpt-4o-mini"),
+            messages=msgs, temperature=float(os.environ.get("HONEYAI_TEMP", "0.7")),
+            max_tokens=40)
+        return _clean_command(resp.choices[0].message.content)
+
+    if provider == "anthropic":
+        import anthropic
+        client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY
+        resp = client.messages.create(
+            model=model or os.environ.get("HONEYAI_MODEL", "claude-3-5-haiku-20241022"),
+            system=system_prompt, messages=conversation,
+            temperature=float(os.environ.get("HONEYAI_TEMP", "0.7")),
+            max_tokens=40)
+        return _clean_command(resp.content[0].text)
+
+    if provider == "ollama":
+        import ollama
+        msgs = [{"role": "system", "content": system_prompt}] + conversation
+        resp = ollama.chat(model=model or os.environ.get("HONEYAI_MODEL", "llama3.2"),
+                           messages=msgs, options={"num_predict": 40})
+        return _clean_command(resp["message"]["content"])
+
+    raise ValueError(f"unknown provider: {provider!r} (use openai|anthropic|ollama)")
 
 
 def gen_ai_live(sid: str, task: Task, model_family: str,
                 evasion: EvasionStrategy = EvasionStrategy.NONE,
-                max_steps: int = 15) -> Session:
+                max_steps: int = 15, provider: str | None = None,
+                model: str | None = None) -> Session:
     """Drive the harness with a real LLM. Schema-identical to gen_ai."""
     import time
     s = Session(sid, ActorLabel.AI_DRIVEN, task.task_id,
@@ -133,7 +181,7 @@ def gen_ai_live(sid: str, task: Task, model_family: str,
     progress = 0.0
     for _ in range(max_steps):
         t0 = time.time()
-        cmd = call_llm(system, convo).strip()
+        cmd = call_llm(system, convo, provider=provider, model=model).strip()
         dt = time.time() - t0
         obs = st.run(cmd)
         if task.solved_by(cmd, st):

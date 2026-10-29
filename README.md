@@ -28,8 +28,17 @@ pip install -r requirements.txt
 python scripts/build_dataset.py        # writes data/sessions/poc_dataset.jsonl
 python -m honeyai.models.xgb_baseline  # Model 1 (XGBoost), leakage-safe macro-F1
 python -m honeyai.models.recurrent     # Model 2 (GRU sequence model)
+python -m honeyai.models.llm_model     # Model 3 (LM, CPU tfidf stand-in)
 python scripts/online_demo.py          # per-command scoring, terminal
 python -m honeyai.dashboard.app        # per-command scoring, web dashboard
+```
+
+Real AI sessions (your own API key, replaces the simulated AI class):
+
+```bash
+export OPENAI_API_KEY=sk-...           # or ANTHROPIC_API_KEY, or use Ollama locally
+python scripts/generate_ai_sessions.py --provider openai --model gpt-4o-mini \
+    --per-task 3 --out data/sessions/ai_openai.jsonl
 ```
 
 ## Layout
@@ -46,10 +55,14 @@ honeyai/
   models/
     xgb_baseline.py      # Model 1: XGBoost, grouped leakage-resistant CV
     recurrent.py         # Model 2: GRU on interleaved sequence
-    # llm_qlora.py       # Model 3: QLoRA fine-tuned LM              (TODO)
+    llm_model.py         # Model 3: LM over transcript (tfidf stand-in | qlora on GPU)
   scoring.py             # shared online-scoring + adaptive-threat score
   features/sequence.py   # per-step encoding for Model 2
   dashboard/app.py       # Gradio per-command scoring dashboard
+scripts/
+  train_qlora.py         # Model 3 QLoRA fine-tune skeleton (run on GPU)
+  generate_ai_sessions.py# generate REAL AI sessions via OpenAI/Anthropic/Ollama
+docs/cowrie_setup.md     # step-by-step honeypot setup
 scripts/
   build_dataset.py       # assemble the full dataset
   online_demo.py         # per-command scoring tracer bullet
