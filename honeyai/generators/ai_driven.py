@@ -143,11 +143,18 @@ def call_llm(system_prompt: str, conversation: list[dict],
     if provider == "anthropic":
         import anthropic
         client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY
-        resp = client.messages.create(
+        kwargs = dict(
             model=model or os.environ.get("HONEYAI_MODEL", "claude-3-5-haiku-20241022"),
-            system=system_prompt, messages=conversation,
+            system=system_prompt, messages=conversation, max_tokens=40,
             temperature=float(os.environ.get("HONEYAI_TEMP", "0.7")),
-            max_tokens=40)
+        )
+        try:
+            resp = client.messages.create(**kwargs)
+        except TypeError:
+            # SDK version does not accept one of the optional kwargs (e.g. temperature);
+            # retry with only the essential, version-stable arguments.
+            kwargs.pop("temperature", None)
+            resp = client.messages.create(**kwargs)
         return _clean_command(resp.content[0].text)
 
     if provider == "ollama":
