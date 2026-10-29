@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.egg-info/
+.ipynb_checkpoints/
+# large / generated artefacts (keep the generators, not the output)
+data/raw/
+data/processed/
+*.pt
+*.bin
+adapters/
+# keep the small PoC dataset so teammates can run immediately:
+!data/sessions/poc_dataset.jsonl
+.DS_Store

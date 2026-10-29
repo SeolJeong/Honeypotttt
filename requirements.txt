@@ -1,0 +1,10 @@
+scikit-learn>=1.4
+xgboost>=2.0
+numpy>=1.26
+# sequence / LLM models (Model 2, Model 3) - add when you build them:
+# torch>=2.2
+# transformers>=4.40
+# peft>=0.10
+# bitsandbytes>=0.43
+# dashboard:
+# gradio>=4.0
