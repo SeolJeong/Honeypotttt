@@ -1,0 +1,17 @@
+# secrets
+.env
+# python
+__pycache__/
+*.pyc
+# training outputs (adapters are large; submit separately)
+runs/
+# downloaded public datasets (large; see docs/DATA_PLAN.md §3A)
+external/
+# LLM notebook outputs (written to the repo root)
+adapter_seed*/
+qlora_seed*/
+qlora_patched_*.json
+qlora_patched_*.zip
+# local Python environment
+.venv/
+venv/
