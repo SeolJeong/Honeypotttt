@@ -12,6 +12,7 @@ adapter_seed*/
 qlora_seed*/
 qlora_patched_*.json
 qlora_patched_*.zip
+.ipynb_checkpoints/
 # local Python environment
 .venv/
 venv/
