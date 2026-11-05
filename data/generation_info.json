@@ -1,0 +1,16 @@
+{
+ "seed": 2026,
+ "scale": 1.0,
+ "human_timing": {
+  "median_lo": 2.0,
+  "median_hi": 10.0,
+  "sigma_lo": 0.8,
+  "sigma_hi": 2.2
+ },
+ "human_timing_file": "configs/human_timing.json",
+ "n_sessions": 2312,
+ "dedup": {
+  "dup_within_split": 6,
+  "test_equals_train": 2
+ }
+}
