@@ -23,6 +23,7 @@ import argparse
 import copy
 import json
 import os
+import random
 import sys
 import time
 
@@ -54,6 +55,27 @@ def truncate(sessions, k):
         t["interactions"] = s["interactions"][:k]
         t["total_steps"] = len(t["interactions"])
         out.append(t)
+    return out
+
+
+def gap_augment(train, frac, p, seed):
+    """Equal-effort counterpart of the LLM notebook's GAP_AUG (v4): `frac` of the scripted TRAIN sessions get an
+    extra copy in which each inter-command gap is, with probability `p`, resampled from the gaps of the
+    NON-scripted TRAIN sessions. Applied to training data only; test and KYPO sessions are never modified."""
+    rng = random.Random(seed)
+    pool = [st["inter_command_gap_s"] for s in train if s["actor_label"] != "scripted"
+            for st in s["interactions"] if st.get("inter_command_gap_s") is not None]
+    scripted = sorted(s["session_id"] for s in train if s["actor_label"] == "scripted")
+    picked = set(rng.sample(scripted, round(len(scripted) * frac)))
+    out = list(train)
+    for s in train:
+        if s["session_id"] in picked:
+            t = copy.deepcopy(s)
+            t["session_id"] = s["session_id"] + "#gapaug"
+            for st in t["interactions"]:
+                if st.get("inter_command_gap_s") is not None and rng.random() < p:
+                    st["inter_command_gap_s"] = rng.choice(pool)
+            out.append(t)
     return out
 
 
@@ -154,11 +176,18 @@ def main():
     ap.add_argument("--kypo", default=os.path.join("external", "kypo", "kypo_sessions.json"))
     ap.add_argument("--out", default=os.path.join("runs", "baselines.json"))
     ap.add_argument("--gru-epochs", type=int, default=60)
+    ap.add_argument("--gap-aug", type=float, default=0.0, help="fraction of scripted train sessions given a gap-jittered copy (v4: 0.5)")
+    ap.add_argument("--gap-aug-p", type=float, default=0.7, help="per-gap resampling probability (v4: 0.7)")
+    ap.add_argument("--gap-aug-seed", type=int, default=2026)
     a = ap.parse_args()
 
     sessions = load_sessions(a.data)
     train = [s for s in sessions if s["split"] == "train"]
     test = [s for s in sessions if s["split"] == "test"]
+    if a.gap_aug > 0:
+        n0 = len(train)
+        train = gap_augment(train, a.gap_aug, a.gap_aug_p, a.gap_aug_seed)
+        print(f"gap augmentation: +{len(train) - n0} jittered scripted train copies (frac {a.gap_aug}, p {a.gap_aug_p})")
     kypo = json.load(open(a.kypo, encoding="utf-8")) if os.path.exists(a.kypo) else None
     print(f"data {a.data}: train {len(train)}, test {len(test)}; KYPO {'%d sessions' % len(kypo) if kypo else 'not found'}")
 
@@ -206,7 +235,7 @@ def main():
 
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     with open(a.out, "w", encoding="utf-8") as fh:
-        json.dump({"data": a.data, "seeds": SEEDS, "results": results}, fh, indent=1)
+        json.dump({"data": a.data, "seeds": SEEDS, "gap_aug": [a.gap_aug, a.gap_aug_p, a.gap_aug_seed], "results": results}, fh, indent=1)
     pred_out = os.path.splitext(a.out)[0] + "_predictions.json"
     with open(pred_out, "w", encoding="utf-8") as fh:
         json.dump({"data": a.data, "labels": LABELS, "models": all_preds}, fh)
