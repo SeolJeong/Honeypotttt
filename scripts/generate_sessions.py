@@ -43,11 +43,12 @@ TRAIN_SCRIPTS = ["fixed_replay", "state_machine", "conditional_error_handling", 
 TEST_SCRIPTS = ["human_like_delays", "alternative_commands", "retry_on_failure"]
 
 
-def plan(scale: float):
+def plan(scale: float, persona_offset: int = 0):
     """Yield (split, actor_label, family, evasion, participant, reps) cells."""
     n = lambda x: max(1, round(x * scale))
-    for pid in range(1, 21):
-        yield ("train" if pid <= 12 else "test", "human", "sim_human", "none", f"SP{pid:02d}", n(5))
+    for i in range(1, 21):
+        pid = i + persona_offset          # offset 20 -> SP21-SP40: new personas, none shared with v2/v2b
+        yield ("train" if i <= 12 else "test", "human", "sim_human", "none", f"SP{pid:02d}", n(5))
     for fam in TRAIN_SCRIPTS:
         yield ("train", "scripted", fam, "none", None, n(14))
     for fam in TEST_SCRIPTS:
@@ -72,6 +73,8 @@ def main():
     ap.add_argument("--scale", type=float, default=1.0)
     ap.add_argument("--seed", type=int, default=2026)
     ap.add_argument("--out", default=os.path.join("data", "v2"))
+    ap.add_argument("--id-prefix", default="V2-", help="session id prefix (v3: V3-)")
+    ap.add_argument("--persona-offset", type=int, default=0, help="v3: 20 -> human personas SP21-SP40")
     ap.add_argument("--human-timing", default=None,
                     help="JSON from scripts/calibrate_human_timing.py (default: v2's original persona timing)")
     a = ap.parse_args()
@@ -83,7 +86,7 @@ def main():
 
     master = random.Random(a.seed)
     sessions, scen_seed = [], a.seed * 1_000_003
-    for split, label, fam, ev, pid, reps in plan(a.scale):
+    for split, label, fam, ev, pid, reps in plan(a.scale, a.persona_offset):
         for task in TASKS:
             for _ in range(reps):
                 scen_seed += 1
@@ -98,7 +101,7 @@ def main():
                     pol = ai_agent(fam, ev, rng)
                 steps = run_session(sc, pol)
                 sessions.append({
-                    "session_id": f"V2-{len(sessions) + 1:05d}",
+                    "session_id": f"{a.id_prefix}{len(sessions) + 1:05d}",
                     "actor_label": label, "participant_id": pid, "task": task, "split": split,
                     "evasion_strategy": ev, "generator_family": fam,
                     "total_steps": len(steps),
@@ -124,7 +127,7 @@ def main():
             f.write(json.dumps(to_ds4(s), ensure_ascii=False) + "\n")
 
     with open(os.path.join(a.out, "generation_info.json"), "w", encoding="utf-8") as f:
-        json.dump({"seed": a.seed, "scale": a.scale, "human_timing": dict(HUMAN_TIMING),
+        json.dump({"seed": a.seed, "scale": a.scale, "id_prefix": a.id_prefix, "persona_offset": a.persona_offset, "human_timing": dict(HUMAN_TIMING),
                    "human_timing_file": a.human_timing, "n_sessions": len(sessions), "dedup": dropped}, f, indent=1)
     print(f"wrote {len(sessions)} sessions to {a.out}")
     print("by split/label:", dict(Counter((s["split"], s["actor_label"]) for s in sessions)))

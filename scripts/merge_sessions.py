@@ -25,7 +25,7 @@ from collections import Counter
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from honeyai.features import extract_all
-from honeyai.sim.recording import dedupe, validate
+from honeyai.sim.recording import dedupe, interleaved_text, validate
 from scripts.generate_sessions import to_ds4
 
 
@@ -47,6 +47,9 @@ def main():
     ap.add_argument("--keep-incomplete", action="store_true",
                     help="keep agent sessions that ended on an API error/refusal (dropped by default)")
     ap.add_argument("--out", default=os.path.join("data", "v3"))
+    ap.add_argument("--exclude-seen", nargs="*", default=[],
+                    help="dataset1 files of EARLIER versions (e.g. data/v2b/dataset1_sessions.json): any TEST session "
+                         "whose transcript is identical to a session in them is dropped, so the test set is all-new")
     a = ap.parse_args()
 
     sessions, bad, seen, dropped = [], 0, set(), 0
@@ -73,6 +76,12 @@ def main():
                        (lab == "AI-driven" and s["evasion_strategy"] in a.test_evasions)
                 s["split"] = "test" if test else "train"
             sessions.append(s)
+
+    if a.exclude_seen:
+        seen_txt = {interleaved_text(x) for p in a.exclude_seen for x in load_any(p)}
+        n0 = len(sessions)
+        sessions = [x for x in sessions if not (x["split"] == "test" and interleaved_text(x) in seen_txt)]
+        print(f"dropped {n0 - len(sessions)} test sessions identical to a session in {a.exclude_seen}")
 
     sessions, dup = dedupe(sessions)
     if dup["dup_within_split"] or dup["test_equals_train"]:

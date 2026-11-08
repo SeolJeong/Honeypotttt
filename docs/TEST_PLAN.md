@@ -142,6 +142,76 @@ The script was self-tested by treating the GRU as the "LLM" (results in §5).
 
 ---
 
+## 4B. Model 3 configuration selection (declared 2026-11-05, before the shift-validation runs)
+
+**Why this section exists.** Two Model 3 configurations have already been scored on the test set:
+option 1 (full sessions only, seed 42: full-session macro-F1 0.724) and option 2 (partial-session
+training, 3 seeds: 0.653 ± 0.011). Their validation set was a random 15% of `train`, which is
+in-distribution (val 0.87–0.97 vs test 0.65–0.72) and so says nothing about the test shift.
+Keeping whichever configuration scored higher on test would be selection on the test set.
+From here on the rule below decides, and both earlier runs are reported as they are.
+
+**Selection rule.**
+
+1. **Validation mirrors the test shift** (`VAL_MODE = "shift"` in `notebooks/qlora_generative_patched.ipynb`
+   and `scripts/train_llm.py`). Taken from `train` only:
+   - one AI evasion strategy, held out entirely (unseen-strategy shift);
+   - one scripted generator family, held out entirely (unseen-family shift);
+   - 15% of human participants, held out as whole participants.
+
+   The strategy and family are picked by a fixed rule, not by hand: `random.Random(2026)` (the dataset's
+   generation seed) chooses from the sorted list of non-`none` AI strategies, then from the sorted list of
+   scripted families. On v2b this gives **`hesitation_redundant_exploration`** and **`randomised_ordering`**:
+   304 validation sessions (80 human, 112 scripted, 112 AI) and 1,178 training sessions.
+   `VAL_RULE_SEED` must not be changed after seeing any result.
+2. **Selection metric:** macro-F1 on **full** validation sessions, the same as the primary test metric.
+   It is used both for early stopping and for choosing between configurations.
+3. **Candidates, in order** (each one is seed 42 first, and is compared on validation only):
+   1. option 1, full sessions only (`PREFIX_TRAIN = False`);
+   2. option 2, partial-session training (`PREFIX_TRAIN = True`, `TRAIN_PREFIXES = [1, 3, 5, None]`);
+   3. optional: the winner of 1 vs 2 with `Qwen2.5-1.5B-Instruct` instead of 0.5B.
+
+   The configuration with the highest validation macro-F1 is the final Model 3 and is then run on
+   seeds 123 and 456. A tie (within 0.01) goes to the cheaper configuration.
+4. **Fixed hyperparameters:** LR 1e-4, LoRA r 16, MAX_LEN 768, MAX_EPOCHS 4, PATIENCE 1. They are not
+   changed in response to any test result.
+5. **Test set:** scored once per final configuration with 3 seeds and compared with `compare_models.py` (§4).
+   The headline is the per-seed mean ± std. The seed-ensemble figure is secondary.
+6. **Reporting:** every configuration tried is reported, with its validation and test scores: the two
+   earlier random-validation runs, the shift-validation runs, and 1.5B if it was run.
+   Note for §3.3 (equal effort): Model 3 gets 2–3 configuration trials, while the baselines use defaults.
+   Say so in the report as a limitation.
+
+**Known limitation of the shift validation.** `train` has only two AI families (`sim_agent_a`,
+`sim_agent_b`), so the unseen-AI-family shift (test: `sim_agent_c`) cannot be mirrored without removing
+half of the AI training data. Only the unseen-strategy and unseen-scripted-family shifts are mirrored.
+Holding these sessions out also reduces training data by about 20%.
+
+**Outcome (recorded 2026-11-08).**
+- **Seed 42 validation:** option 1 scored 0.9597 and option 2 scored 0.9643, a tie within 0.01. The tie went to the cheaper option, so **option 1 is Model 3**.
+- **Its three seeds (42, 123, 456)** are reported in `docs/TEST_RESULTS_SABRINA.md` §3.9.
+
+**Post-hoc experiment: v4** (`notebooks/qlora_generative_patched v4.ipynb`, commit `8f433ab`).
+- **What it adds to option 2:**
+  - gap augmentation of scripted TRAIN sessions;
+  - jittering of the scripted validation sessions;
+  - prefix loss weight 0.3;
+  - dataset-level loss-weight normalisation;
+  - a gradient-accumulation loss fix.
+- **It was designed after seeing test errors** (0/64 recall on the test family `human_like_delays`). Validation would not have selected it: its validation score was lower, and on a validation set it had itself changed.
+- **Its v2b test score is therefore biased upward** by an unknown amount. It is reported only as an experiment, and compared only against baselines given the same augmentation (`run_baselines.py --gap-aug 0.5`).
+- **Its configuration is frozen as of that commit.** It may be evaluated cleanly once, alongside Model 3, on v3 test sessions that did not exist when it was designed. v2b test sessions reused in v3 do not count as clean.
+
+**Tuning budget actually spent on Model 3** (§3.3):
+- the original notebook;
+- option 1 and option 2 with random validation;
+- option 1 and option 2 with shift validation;
+- v4.
+
+The baselines used their defaults, plus the gap augmentation in the equal-effort check.
+
+---
+
 ## 4A. Comparing with existing LLMs (off the shelf)
 
 This answers "why fine-tune instead of just asking an existing LLM?". The off-the-shelf models get **no training**, the same sessions and the same class definitions (the prompt is fixed in the code; don't tune it on test results).

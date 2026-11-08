@@ -405,6 +405,8 @@ class Shell:
 
     def _pipeline(self, part: str) -> tuple[str, str]:
         stages = [s.strip() for s in part.split("|")]
+        if any(not s for s in stages):          # e.g. "ls |" or "a | | b": bash rejects an empty pipe stage
+            return "bash: syntax error near unexpected token `|'", "command_not_found"
         out, cat = self._exec(stages[0])
         for st in stages[1:]:
             if cat not in ("success",):

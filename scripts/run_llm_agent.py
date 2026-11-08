@@ -82,7 +82,7 @@ def chat(base_url, key, model, messages, temperature, timeout=120, retries=4, pr
         headers["Authorization"] = f"Bearer {key}"
     if "openrouter.ai" in base_url:
         headers["X-Title"] = "HoneyAI coursework data collection"
-    payload = {"model": model, "messages": messages, "temperature": temperature, "max_tokens": 300}
+    payload = {"model": model, "messages": messages, "temperature": temperature, "max_tokens": 1000}
     if provider_order and "openrouter.ai" in base_url:
         # pin the upstream provider so latency (= recorded timing) is not a routing artefact
         payload["provider"] = {"order": list(provider_order), "allow_fallbacks": False}
@@ -166,7 +166,7 @@ def run_one(cfg: dict, task: str, evasion: str, scen_seed: int, key: str | None,
         actor_label="AI-driven", participant_id=None, evasion_strategy=evasion,
         generator_family=cfg["family"], data_source="llm_agent_vs_simulator",
         agent_model=cfg["model"], agent_served_model=served, agent_provider=provider,
-        agent_base_url=cfg["base_url"], agent_temperature=cfg["temperature"], agent_answer=answer,
+        agent_base_url=cfg["base_url"], agent_temperature=cfg["temperature"], agent_max_tokens=1000, agent_answer=answer,
         agent_provider_order=cfg.get("provider_order"),
         incomplete=incomplete, incomplete_reason=reason, contributor=cfg.get("contributor", "anon"),
         **(extra_meta or {}))
