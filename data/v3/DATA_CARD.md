@@ -67,10 +67,9 @@ the network, not just the model.
 - **The simulated test families have been seen before.** They are the same generator families as v2b's test set (new sessions, but the families were seen during development). Say so whenever you report the simulated part.
 - **Frozen v4** (`8f433ab`) and **Model 3** (option 1) are each run once on v3.
 
-## Still to add
-- **Real human sessions** (`docs/HUMAN_COLLECTION.md`). After collection, re-run the merge with
-  `contrib/human_*.jsonl` added and `--test-participants` listing the odd IDs (P101, P103, …).
-  Team members (P19x) go to train only.
+## Real humans: a separate test-only set
+Real human sessions (`docs/HUMAN_COLLECTION.md`) are **not** merged into v3. They are a separate test-only set,
+scored once by the finished models (TEST_PLAN §4C). This keeps v3 frozen.
 
 ## Known simulator limitation
 `ls` prints a whole directory on one line, so `ls | grep x` returns the whole line. This is unchanged from v2b

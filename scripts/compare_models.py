@@ -93,6 +93,9 @@ def main():
                          "gpt4o-mini-zs=runs/zero_shot/gpt4o-mini.jsonl (same file formats as --llm)")
     ap.add_argument("--data", default=os.path.join("data", "dataset1_sessions.json"))
     ap.add_argument("--prefix", default="full", help="full | k=1 | k=3 | k=5")
+    ap.add_argument("--ai-families", nargs="*", default=None,
+                    help="score only these AI generator families (all human and scripted test sessions are kept), "
+                         "e.g. the held-out real agents: gemma-3-27b claude-haiku-5.5")
     ap.add_argument("--boot", type=int, default=5000)
     ap.add_argument("--out", default=os.path.join("runs", "model3_comparison.json"))
     a = ap.parse_args()
@@ -117,7 +120,10 @@ def main():
             sys.exit(f"no '{a.prefix}' predictions in {path}")
         models[name] = got
 
-    truth = {s["session_id"]: s for s in load_sessions(a.data) if s["split"] == "test"}
+    truth = {s["session_id"]: s for s in load_sessions(a.data) if s["split"] == "test"
+             and (a.ai_families is None or s["actor_label"] != "AI-driven" or s["generator_family"] in a.ai_families)}
+    if a.ai_families is not None:
+        print(f"subset: human + scripted test sessions + AI families {a.ai_families} ({len(truth)} sessions)")
     ids = set(truth)
     for seeds in [llm, *models.values()]:
         for v in seeds.values():

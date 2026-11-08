@@ -235,6 +235,40 @@ If a contender was only run on a subset (`--n`), the comparison automatically us
 3. **Family overlap:** once real agent data is in (v3), an LLM judging sessions produced by its own family (e.g. GPT-4o-mini judging gpt4o-mini agents) may recognise its own style. Use judges from families that generated no data, or report the overlap.
 4. The claim to aim for: *"a fine-tuned 0.5B model beats zero-shot 7B-class and API models while being smaller and faster"*. That's only valid if §4's decision rule says LLM BETTER against them.
 
+## 4C. Final evaluation on v3 (declared 2026-11-08, before any model has seen v3)
+
+**Data:** `data/v3/` (see `data/v3/DATA_CARD.md`). v3 is frozen as built on 2026-11-08: 2,818 sessions,
+every test session new. Real human sessions are **not** added to v3; they form a separate test-only set (below).
+
+**Models.** Each is run exactly as already configured. No v3 result may change any setting.
+
+| Model | Configuration | Seeds |
+|---|---|---|
+| **Model 3** | option 1 (§4B): `qlora_generative_patched v3.ipynb`, `PREFIX_TRAIN=False`, `VAL_MODE="shift"`, everything else default | 42, 123, 456 |
+| v4 (post hoc, frozen) | `qlora_generative_patched v4.ipynb` at commit `8f433ab`, unchanged | 42, 123, 456 |
+| Baselines | `run_baselines.py` defaults | 42, 123, 456 for the seeded ones |
+| Baselines with augmentation | `run_baselines.py --gap-aug 0.5` (the equal-effort comparison for v4) | same |
+
+The only change allowed is the data path, plus a separate results folder (`RESULTS_DIR = "runs/llm_v3"`) so that
+v2b runs are not mistaken for finished v3 runs. The validation rule (`VAL_RULE_SEED = 2026`) is applied to v3's
+training set unchanged.
+
+**Primary result:** Model 3 against the un-augmented baselines, full sessions, all v3 test sessions. Decision rule as in §4.
+
+**Reported subsets.** These are fixed now; `compare_models.py --ai-families ...` keeps all human and scripted test sessions:
+1. **Real held-out agents:** AI = `gemma-3-27b`, `claude-haiku-5.5`. **The cleanest test**, because nobody designed anything against these families.
+2. **Simulated AI:** AI = `sim_agent_a`, `sim_agent_b`, `sim_agent_c`. These are new sessions, but the same generator families as v2b's test set.
+3. **Early attribution:** after 1, 3 and 5 commands, all sessions.
+
+**v4** is compared only against the augmented baselines, with its post-hoc status stated. If v4 beats Model 3
+on v3, that is reported as a post-hoc finding confirmed on fresh data. Model 3's label does not change.
+
+**Real humans (test-only).** Sessions from `docs/HUMAN_COLLECTION.md` are never used for training or for choosing
+settings. Every model trained above is scored once on them, and the result is reported as
+"real humans labelled AI" (false-alarm rate), like the KYPO check.
+
+---
+
 ## 5. Current results (development environment, 2026-11-04)
 
 **Baselines on v2b test (830 sessions):**

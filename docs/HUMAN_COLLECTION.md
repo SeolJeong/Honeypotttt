@@ -44,7 +44,6 @@ No names, keystrokes or IP addresses are recorded.
 ## After collection
 Send the `contrib\human_P*.jsonl` files to whoever builds v3.
 
-**Split rule (fixed now, before any data exists):**
-- participants with odd IDs (P101, P103, …) go to **test**;
-- participants with even IDs go to **train**;
-- team members (`P19x`) go to **train** only.
+**All real human sessions are test-only** (TEST_PLAN §4C, decided 2026-11-08, before any were collected).
+They are never used for training or for choosing settings. The finished models are scored on them once, to measure how often real people are wrongly flagged as AI.
+Team members' sessions (`P19x`) are reported separately, or left out.
