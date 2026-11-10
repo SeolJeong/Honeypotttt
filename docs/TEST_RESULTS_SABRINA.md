@@ -23,6 +23,7 @@ These are the results of Model 3 runs on the v2b dataset. The protocol, metrics 
 | 4 | 2026-11-06/07 | **Option 2, shift validation** (notebook v3) | as run 2, plus `VAL_MODE="shift"` (TEST_PLAN §4B): validation scored on full sessions, 1,178 training sessions | 42, 123, 456 | shift | Done |
 | 5 | 2026-11-07 | **Option 1, shift validation** (Run A) | `PREFIX_TRAIN=False`, `VAL_MODE="shift"` | 42 | shift | Done. Validation 0.9597 against option 2's 0.9643: within 0.01, a **tie, so option 1 is selected (cheaper) under §4B** |
 | 7 | 2026-11-08 | **Option 1, shift validation: seeds 123 and 456** (completes Model 3) | identical to run 5 | 123, 456 | shift | Done. **Model 3 = runs 5 + 7** (§3.9) |
+| 9 | 2026-11-10 | **Frozen v4 on v3** (TEST_PLAN §4C) | v4 notebook unchanged; `DATA_PATH=data/v3/...`, `RESULTS_DIR=runs/llm_v3` | 42, 123, 456 | shift, jittered | Done (§3.11) |
 | 8 | 2026-11-09 | **Model 3 on v3** (TEST_PLAN §4C) | as runs 5 + 7; `DATA_PATH=data/v3/...`, `RESULTS_DIR=runs/llm_v3` | 42, 123, 456 | shift | Done (§3.10) |
 | 6 | 2026-11-07 | **v4 notebook**: option 2 + shift validation + gap augmentation (`GAP_AUG`, frac 0.5, p 0.7) + validation jitter + prefix weight 0.3 + loss-weighting and gradient-accumulation fixes | see §3.8 | 42, 123, 456 | shift, jittered | Done. **Designed after seeing test errors** (§3.8) |
 
@@ -40,6 +41,8 @@ Seeded runs report the **per-seed mean ± std**. Option 1 has only one seed so f
 |---|---|---|---|---|---|---|---|
 | QLoRA 0.5B, option 1 (seed 42 only) | **0.724** (95% CI 0.689–0.755) | 0.366 | 0.609 | 0.723 | **0.743** | 0.147 | not recorded |
 | Teammate `train_qlora_local.py` (3 seeds) | 0.513 ± 0.011 | — | — | — | not computed | not computed | — (constant confidence) |
+| **v4 (post hoc, frozen) on v3** | **0.896 ± 0.006** | 0.704 ± 0.003 | 0.875 ± 0.009 | 0.904 ± 0.012 | 0.828 (ensemble) | 0.095 ± 0.015 | 0.062 ± 0.014 |
+| *Best gap-augmented baseline on v3* | *text-cmds 0.858* | *text 0.708* | *text-cmds 0.813* | *text-cmds 0.856* | — | — | — |
 | **Model 3 on v3 (fresh test, 1,113 sessions)** | **0.769 ± 0.069** (ensemble 0.796) | 0.386 ± 0.029 | 0.677 ± 0.031 | 0.712 ± 0.038 | 0.780 (ensemble) | 0.080 ± 0.025 | 0.121 ± 0.005 |
 | *Best baseline on v3* | *text 0.818* | *text 0.669* | *text 0.751* | *text 0.778* | — | — | — |
 | **Model 3: QLoRA 0.5B, option 1, shift validation (3 seeds)** | **0.719 ± 0.036** | 0.391 ± 0.023 | 0.670 ± 0.009 | 0.713 ± 0.014 | 0.705 (ensemble) | 0.137 ± 0.022 | 0.206 ± 0.039 |
@@ -251,6 +254,60 @@ AI recall on `combined` is 0.20.
 
 **Note:** on the test set, option 2 scored as well as or better than option 1 at every point. Validation could not tell the two apart,
 and the tie-break chose option 1. Option 2 is reported in full as the partial-session-training experiment (§3.6).
+
+---
+
+### 3.11 Final evaluation on v3: frozen v4 (run 9, TEST_PLAN §4C)
+
+v4 was designed after seeing v2b test errors, so its v2b score was biased (§3.8). It was frozen at commit `8f433ab`
+and run here once, unchanged, on v3. Only the data path and the results folder differ.
+
+**Validation and test per seed:**
+
+| Seed | Validation per epoch | Best | Full | k=1 | k=3 | k=5 | Human → AI | ECE |
+|---|---|---|---|---|---|---|---|---|
+| 42 | 0.854, **0.923**, 0.896 | epoch 2 | 0.901 | 0.703 | 0.881 | 0.909 | 0.087 | 0.043 |
+| 123 | 0.867, **0.901**, 0.897 | epoch 2 | 0.901 | 0.702 | 0.882 | 0.914 | 0.081 | 0.075 |
+| 456 | 0.821, **0.894**, 0.853 | epoch 2 | 0.887 | 0.708 | 0.863 | 0.887 | 0.116 | 0.068 |
+| **Mean ± std** | | | **0.896 ± 0.006** | 0.704 ± 0.003 | 0.875 ± 0.009 | 0.904 ± 0.012 | 0.095 | 0.062 |
+
+- Seed variance is small (std 0.006, against Model 3's 0.069).
+- Epochs took 59–106 minutes.
+- Latency: p50 166 ms, p95 173 ms.
+
+**v4 against the gap-augmented baselines and Model 3** (ensemble; Holm-corrected; diff with 95% CI):
+
+| vs | Full, all sessions | Real held-out agents (708) | Simulated AI (826) | After 1 command | After 3 commands | After 5 commands |
+|---|---|---|---|---|---|---|
+| text-cmds | **+0.041 [+0.024, +0.058]** | **+0.032 [+0.014, +0.050]** | **+0.049** | +0.002, n.s. | **+0.065** | **+0.052** |
+| text | **+0.045 [+0.028, +0.063]** | **+0.021 [+0.004, +0.038]** | **+0.061** | +0.001, n.s. | **+0.070** | **+0.068** |
+| GRU | **+0.147** | **+0.161** | **+0.166** | **+0.087** | **+0.226** | **+0.187** |
+| GRU, commands only | **+0.144** | **+0.161** | **+0.169** | **+0.046** | **+0.221** | **+0.181** |
+| timing | **+0.152** | **+0.171** | **+0.139** | **+0.103** | **+0.208** | **+0.167** |
+| XGBoost | **+0.187** | **+0.215** | **+0.208** | **+0.288** | **+0.227** | **+0.208** |
+| Model 3 (option 1) | **+0.103 [+0.079, +0.127]** | **+0.116** | **+0.111** | **+0.297** | **+0.179** | **+0.185** |
+
+Bold means "v4 better" under the §4 rule. v4's ensemble scores: full 0.899, real agents 0.946, simulated 0.885,
+k=1 0.708, k=3 0.878, k=5 0.908.
+
+**Recall by family (full sessions, mean of 3 seeds):**
+
+- scripted: all three test families 1.00 (including `human_like_delays`)
+- real agents, held out: `claude-haiku-5.5` 0.97, `gemma-3-27b` 0.94
+- real agents, training families (held-out strategies): `deepseek-v3.2` 0.97, `mistral-small-3.2` 0.92, `llama3.1-8b` 0.83
+- simulated agents: `sim_agent_c` 0.80, `sim_agent_b` 0.70, `sim_agent_a` **0.58**
+
+**Reading:**
+- **v4's improvement holds on fresh data.** With the same gap augmentation given to every baseline, v4 is significantly better than all six on full sessions, after 3 commands and after 5 commands. After 1 command it ties the two text models.
+- **It also holds on the cleanest subset.** On the real agent families nobody designed against (Gemma, Claude), v4 is better than every baseline. Its smallest margin is over text: +0.021, CI [+0.004, +0.038].
+- **v4 is better than Model 3 at every point** (+0.103 on full sessions).
+- **Its remaining weakness is the simulated evasive agents:** recall is 0.58 on `sim_agent_a`, and evasive-AI recall is 0.828 overall.
+
+**Limits on this result:**
+- **The scripted test families are the ones v4 was designed around.** v3's scripted and simulated-AI test families are the same generators as v2b's (new sessions, same families), and `human_like_delays` is the family that motivated the augmentation. Both subsets above include those scripted sessions. Only the real-agent AI sessions come from families nothing was designed against.
+- **Tuning effort is unequal.** v4 is the sixth Model 3 configuration. The baselines got their defaults plus the augmentation, and nothing else.
+- **Under §4B and §4C, Model 3 remains option 1.** v4 is reported as a post-hoc configuration confirmed on fresh data.
+- **All humans are simulated.** The real-human check (KYPO, collected sessions) has not been run for v4.
 
 ---
 

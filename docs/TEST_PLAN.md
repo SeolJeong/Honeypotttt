@@ -238,7 +238,7 @@ If a contender was only run on a subset (`--n`), the comparison automatically us
 ## 4C. Final evaluation on v3 (declared 2026-11-08, before any model has seen v3)
 
 **Data:** `data/v3/` (see `data/v3/DATA_CARD.md`). v3 is frozen as built on 2026-11-08: 2,818 sessions,
-every test session new. Real human sessions are **not** added to v3; they form a separate test-only set (below).
+every test session new. No real human sessions are in v3; the real-human checks are separate, test-only sets (§4D).
 
 **Models.** Each is run exactly as already configured. No v3 result may change any setting.
 
@@ -263,9 +263,54 @@ training set unchanged.
 **v4** is compared only against the augmented baselines, with its post-hoc status stated. If v4 beats Model 3
 on v3, that is reported as a post-hoc finding confirmed on fresh data. Model 3's label does not change.
 
-**Real humans (test-only).** Sessions from `docs/HUMAN_COLLECTION.md` are never used for training or for choosing
-settings. Every model trained above is scored once on them, and the result is reported as
-"real humans labelled AI" (false-alarm rate), like the KYPO check.
+**Real humans (test-only).** The team's own collection (`docs/HUMAN_COLLECTION.md`) was **dropped on 2026-11-10**:
+the only available participant was a team member who built the system. No session was recorded.
+Real-human evidence comes from the two public KYPO sets in §4D.
+
+---
+
+## 4D. Remaining runs (declared 2026-11-10, before any commands-only LLM result was seen)
+
+**No further configuration changes** to Model 3 or v4. The only runs left are these.
+
+**1. Commands-only ablation + KYPO real-human check (GPU).** Both models, trained on v3, 3 seeds.
+
+| Run | Notebook | What changes from the §4C run | Results file |
+|---|---|---|---|
+| Model 3, commands only | v3 notebook (`PREFIX_TRAIN=False`, `VAL_MODE="shift"`) | `COMMANDS_ONLY=True`, `EXTERNAL_TEST_PATH`, `RESULTS_NAME` | `v3_model3_cmds_kypo.json` |
+| v4, commands only | v4 notebook at `8f433ab`, unchanged | the same three settings | `v3_v4_cmds_kypo.json` |
+
+`EXTERNAL_TEST_PATH = "external/kypo/kypo_sessions_ds4_commands_only.jsonl"`, `DATA_PATH` and `RESULTS_DIR = "runs/llm_v3"` as in §4C.
+
+**2. Reporting, fixed now.**
+- **Ablation:** for each model, v3 test macro-F1 with responses (§4C run) against commands-only, at full / k=1 / k=3 / k=5.
+- **Commands-only comparison:** against the commands-only baselines only (`text-cmds`, `gru-cmds`, `timing`).
+  Model 3 is compared with the plain baselines; v4 with the gap-augmented ones.
+- **KYPO:** per seed and mean ± std, the share of real-human sessions labelled human / scripted / AI, for
+  all sessions, target-host sessions and non-target-host sessions, next to the same baselines.
+- **v4 on real agents:** AI recall on `gemma-3-27b` and `claude-haiku-5.5` alone is reported as well as the subset
+  macro-F1, because that subset still contains the scripted families v4 was designed against.
+
+**3. Second real-human set: KYPO2** (`external/kypo2/`, see `docs/DATA_CARDS.md`).
+- **Source:** Ošlejšek, Macák, Dočkalová Burská, *Hands-on cybersecurity training behavior data for process mining*, Data in Brief 52 (2024), doi:10.1016/j.dib.2023.109956; Zenodo record 10298187, CC BY 4.0.
+- **Only `data1` is used:** 52 trainees, November 2022, 215 sessions after conversion.
+  - `data2` is not used. It is the 2022-05-04 training that is already in KYPO: all 4,507 records match.
+- **Independence:** KYPO2 was not used to calibrate anything, and no model or setting has been chosen with it.
+- **Scoring:** the commands-only models are scored on it once, from the adapters saved by the runs above, with no retraining.
+- **Disclosure:** the commands-only baselines were scored on KYPO2 on 2026-11-10, before any LLM result:
+
+  | Baseline | KYPO2 labelled AI |
+  |---|---|
+  | timing | 2.8% |
+  | text-cmds | 6.5% (7.0% with augmentation) |
+  | gru-cmds | 50.4% (46.4% with augmentation) |
+
+**4. Caveats to state with these results.**
+- **Calibration overlap:** the simulated humans' timing was calibrated on KYPO target-host sessions
+  (`scripts/calibrate_human_timing.py`). KYPO is therefore not independent of the training data on timing.
+  KYPO2 is.
+- **Scope:** both sets are commands-only and come from security-training exercises with different tasks.
+  The full models, which read server responses, are untested on real people.
 
 ---
 
@@ -317,7 +362,7 @@ This is why the paired test matters: by raw numbers the GRU (0.717) "beats" XGBo
 ## 7. Known limitations (state these in the report)
 
 - Human and AI sessions in v2b are **simulated policies**; only the scripts are real. Only human *timing* is calibrated to real data.
-- Only one real human participant (case study); KYPO is the real-human evidence, but it uses different tasks and has no outputs.
+- No real human sessions were collected by the team. KYPO and KYPO2 are the real-human evidence, but they use different tasks and have no outputs, and KYPO was used to calibrate simulated human timing.
 - Which evasions succeed depends on simulator assumptions (calibration changed `timing_mimicry` recall from 0.75 to 0.91).
 - XGBoost's cross-validation score (0.965) is inflated; use the test score.
 

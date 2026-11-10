@@ -1,5 +1,8 @@
 # Collecting real human sessions for v3
 
+> **Not carried out.** Dropped on 2026-11-10 (TEST_PLAN §4C): the only available participant was a team member.
+> This guide is kept for future work.
+
 Real people solve short tasks on the **simulated** Linux server, the same one the AI agents attack.
 These sessions are the v3 real-human data. Nothing touches a real machine.
 

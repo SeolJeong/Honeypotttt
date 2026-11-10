@@ -3,7 +3,7 @@
 **Purpose:** a clean evaluation set for the final report. v2b's test set was used for model development
 (see `docs/TEST_RESULTS_SABRINA.md`), so v2b test scores are biased upward. **Every v3 test session is new.**
 
-## Contents (2,818 sessions; real humans not yet added)
+## Contents (2,818 sessions; no real humans)
 
 | Split | Class | Source | Sessions |
 |---|---|---|---|
@@ -67,9 +67,9 @@ the network, not just the model.
 - **The simulated test families have been seen before.** They are the same generator families as v2b's test set (new sessions, but the families were seen during development). Say so whenever you report the simulated part.
 - **Frozen v4** (`8f433ab`) and **Model 3** (option 1) are each run once on v3.
 
-## Real humans: a separate test-only set
-Real human sessions (`docs/HUMAN_COLLECTION.md`) are **not** merged into v3. They are a separate test-only set,
-scored once by the finished models (TEST_PLAN §4C). This keeps v3 frozen.
+## Real humans
+v3 contains no real human sessions. The team's own collection was dropped (TEST_PLAN §4C). The real-human checks
+are the two public KYPO sets in `external/`, used test-only by the commands-only models (TEST_PLAN §4D).
 
 ## Known simulator limitation
 `ls` prints a whole directory on one line, so `ls | grep x` returns the whole line. This is unchanged from v2b

@@ -91,3 +91,24 @@ In each `data/vX/` folder, `dataset1_sessions.json` is the source. `dataset2_tab
 - The teammate's 824-session "large" file: generated like v1, with 19 duplicates and 23 test sessions identical to training ones. Development only, if at all.
 - Raw KYPO `data.zip`: download it from Zenodo (link in `docs/DATA_PLAN.md` §3A).
 - Wild data (Cowrie, 4-month, CyberLab): unlabelled. Download links are in `docs/DATA_PLAN.md`.
+
+## KYPO2: second real-human set (added 2026-11-10)
+
+**Source:** Ošlejšek, Macák, Dočkalová Burská. *Hands-on cybersecurity training behavior data for process mining.*
+Data in Brief 52 (2024). doi:10.1016/j.dib.2023.109956. Zenodo record 10298187, **CC BY 4.0**. Cite it whenever you use these files.
+
+- **What is used:** `data1` only. It holds 52 trainees doing the "Locust 3302" insider-attack exercise in the KYPO Cyber Range in November 2022.
+  - It has 3,653 command records (2,749 Bash, 904 Metasploit). Only the Bash commands are converted.
+- **What is not used:** `data2` (48 trainees, May 2022). All 4,507 of its records are already in KYPO, as the 2022-05-04 training.
+- **Overlap with KYPO:** none at record level (0 of 3,653). After conversion, 2 short sessions have the same text as a KYPO session.
+- **Format:** the same as KYPO: command, timestamp, host, working directory. **No outputs.**
+- **Converted with:**
+  ```
+  python scripts/convert_kypo.py --zip external/kypo2/data1_commands.zip --out external/kypo2/kypo2_sessions.json
+  ```
+  `data1_commands.zip` is the `command_histories` folder of `data1.zip`, re-zipped under a training/event path.
+  - The result is 215 sessions, 12 of them on target hosts.
+  - The gaps between commands are p10 1.0 s, p50 14.2 s, p90 130.4 s.
+- **Use:** test-only, commands-only models, real-human false-alarm rate (TEST_PLAN §4D). It was not used for calibration.
+- **Not for:** training, or headline accuracy.
+
