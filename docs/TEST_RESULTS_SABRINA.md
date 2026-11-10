@@ -23,6 +23,7 @@ These are the results of Model 3 runs on the v2b dataset. The protocol, metrics 
 | 4 | 2026-11-06/07 | **Option 2, shift validation** (notebook v3) | as run 2, plus `VAL_MODE="shift"` (TEST_PLAN §4B): validation scored on full sessions, 1,178 training sessions | 42, 123, 456 | shift | Done |
 | 5 | 2026-11-07 | **Option 1, shift validation** (Run A) | `PREFIX_TRAIN=False`, `VAL_MODE="shift"` | 42 | shift | Done. Validation 0.9597 against option 2's 0.9643: within 0.01, a **tie, so option 1 is selected (cheaper) under §4B** |
 | 7 | 2026-11-08 | **Option 1, shift validation: seeds 123 and 456** (completes Model 3) | identical to run 5 | 123, 456 | shift | Done. **Model 3 = runs 5 + 7** (§3.9) |
+| 8 | 2026-11-09 | **Model 3 on v3** (TEST_PLAN §4C) | as runs 5 + 7; `DATA_PATH=data/v3/...`, `RESULTS_DIR=runs/llm_v3` | 42, 123, 456 | shift | Done (§3.10) |
 | 6 | 2026-11-07 | **v4 notebook**: option 2 + shift validation + gap augmentation (`GAP_AUG`, frac 0.5, p 0.7) + validation jitter + prefix weight 0.3 + loss-weighting and gradient-accumulation fixes | see §3.8 | 42, 123, 456 | shift, jittered | Done. **Designed after seeing test errors** (§3.8) |
 
 Model: `Qwen/Qwen2.5-0.5B-Instruct`, 4-bit NF4, LoRA on all linear layers, class-weighted loss. The model
@@ -39,6 +40,8 @@ Seeded runs report the **per-seed mean ± std**. Option 1 has only one seed so f
 |---|---|---|---|---|---|---|---|
 | QLoRA 0.5B, option 1 (seed 42 only) | **0.724** (95% CI 0.689–0.755) | 0.366 | 0.609 | 0.723 | **0.743** | 0.147 | not recorded |
 | Teammate `train_qlora_local.py` (3 seeds) | 0.513 ± 0.011 | — | — | — | not computed | not computed | — (constant confidence) |
+| **Model 3 on v3 (fresh test, 1,113 sessions)** | **0.769 ± 0.069** (ensemble 0.796) | 0.386 ± 0.029 | 0.677 ± 0.031 | 0.712 ± 0.038 | 0.780 (ensemble) | 0.080 ± 0.025 | 0.121 ± 0.005 |
+| *Best baseline on v3* | *text 0.818* | *text 0.669* | *text 0.751* | *text 0.778* | — | — | — |
 | **Model 3: QLoRA 0.5B, option 1, shift validation (3 seeds)** | **0.719 ± 0.036** | 0.391 ± 0.023 | 0.670 ± 0.009 | 0.713 ± 0.014 | 0.705 (ensemble) | 0.137 ± 0.022 | 0.206 ± 0.039 |
 | QLoRA 0.5B, v4 (gap augmentation, 3 seeds) | **0.815 ± 0.021** | 0.690 ± 0.037 | 0.793 ± 0.019 | 0.822 ± 0.025 | 0.670 (ensemble) | 0.144 ± 0.066 | 0.113 ± 0.009 |
 | *Best baseline with the same gap augmentation* | *text-cmds 0.827* | *text 0.718* | *text-cmds 0.781* | *text-cmds 0.826* | — | — | — |
@@ -250,6 +253,59 @@ AI recall on `combined` is 0.20.
 and the tie-break chose option 1. Option 2 is reported in full as the partial-session-training experiment (§3.6).
 
 ---
+
+### 3.10 Final evaluation on v3: Model 3 (run 8, TEST_PLAN §4C)
+
+Every v3 test session is new (1,113 sessions: 320 human, 188 scripted, 605 AI, of which 287 are real LLM agents).
+The baselines were run on two machines, and their results match (XGBoost within 0.006).
+
+**Validation and test per seed:**
+
+| Seed | Validation per epoch | Best | Full | k=1 | k=3 | k=5 | Human → AI |
+|---|---|---|---|---|---|---|---|
+| 42 | 0.871, **0.927**, 0.730 | epoch 2 | 0.810 | 0.348 | 0.679 | 0.734 | 0.116 |
+| 123 | 0.818, **0.912**, 0.873 | epoch 2 | 0.826 | 0.393 | 0.713 | 0.744 | 0.066 |
+| 456 | **0.888**, 0.746 | epoch 1 | 0.672 | 0.417 | 0.638 | 0.658 | 0.059 |
+| **Mean ± std** | | | **0.769 ± 0.069** | 0.386 ± 0.029 | 0.677 ± 0.031 | 0.712 ± 0.038 | 0.080 |
+
+- Seed 456 stopped after epoch 1 and labels 182 of 605 AI sessions as human, which explains the large std.
+- The 3-seed ensemble (0.796) is higher than the per-seed mean, because the seeds make different errors.
+- Latency: p50 168 ms, p95 183 ms.
+
+**Primary result: full sessions, all test sessions** (ensemble against ensemble baselines; Holm-corrected):
+
+| vs | Baseline F1 | Diff | 95% CI | Verdict |
+|---|---|---|---|---|
+| text | 0.818 | −0.022 | [−0.049, +0.006] | no significant difference |
+| text-cmds | 0.777 | +0.019 | [−0.009, +0.047] | no significant difference |
+| GRU (Model 2) | 0.767 | +0.029 | [−0.003, +0.061] | no significant difference |
+| GRU, commands only | 0.762 | +0.035 | [+0.005, +0.065] | **better** (Holm p 0.046, borderline) |
+| XGBoost (Model 1) | 0.648 | +0.148 | [+0.115, +0.179] | **better** |
+| timing | 0.622 | +0.174 | [+0.141, +0.206] | **better** |
+
+**Subsets fixed in §4C** (full sessions; human and scripted test sessions kept in both):
+
+| Subset | Model 3 ensemble (per seed) | Better than | Tied with | Worse than |
+|---|---|---|---|---|
+| Real held-out agents (Gemma, Claude), 708 sessions | 0.830 (0.813 ± 0.068). AI recall 0.913 | XGBoost, timing | text-cmds, GRU, GRU-cmds | **text** (−0.055) |
+| Simulated AI, 826 sessions | 0.774 (0.753 ± 0.068). Evasive-AI recall 0.668 | **GRU, GRU-cmds**, XGBoost, timing | text, text-cmds | — |
+
+**Early attribution** (all sessions):
+
+| Point | Model 3 ensemble | Better than | Tied with | Worse than |
+|---|---|---|---|---|
+| After 1 command | 0.411 | — | timing | all others (labels 68% of humans as AI) |
+| After 3 commands | 0.699 | — | XGBoost, GRUs, timing | text, text-cmds |
+| After 5 commands | 0.723 | XGBoost, timing | text-cmds | text, GRU, GRU-cmds |
+
+**Reading:**
+- On fresh data, Model 3 is **statistically tied with the best baseline** (TF-IDF text) on full sessions.
+- It is significantly better than Model 1 (XGBoost), the timing rule and the commands-only GRU.
+- It is tied with Model 2 (GRU) overall, and better than both GRUs on the simulated evasive agents.
+- It is not the best model:
+  - TF-IDF text is better on the real-agent subset;
+  - option 1 is weak early in a session.
+- The seed variance (std 0.069) is large, so the per-seed mean is the conservative headline.
 
 ### 3.9 Model 3 (final, pre-specified): option 1 with shift validation, 3 seeds (runs 5 + 7)
 
