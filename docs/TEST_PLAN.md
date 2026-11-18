@@ -1,6 +1,6 @@
 # HoneyAI: test plan (UAT), benchmarking protocol and Model 3 validation
 
-Version 2026-11-04. Applies to `honeyai_code.zip` + `honeyai_datasets.zip` of the same date.
+Version 2026-11-04, last updated 2026-11-18 (§4C, §4D, test statuses, §5, §6). Applies to `honeyai_code.zip` + `honeyai_datasets.zip` of the same date.
 
 Every test case below was run in the development environment before this document was written, unless the **Status** column says otherwise. "Expected" values are what that run produced. Re-running on Colab should give **identical** results for deterministic steps, and results within the stated **tolerance** for seeded ones.
 
@@ -59,21 +59,21 @@ Columns: **Status** = result in the development environment on 2026-11-04. Fill 
 
 | ID | Test | Steps | Expected | Status |
 |---|---|---|---|---|
-| TC-D1 | **Smoke test** (E2) | In `notebooks/qlora_generative_patched.ipynb` set `SMOKE = True`, `DATA_PATH = "data/v2b/dataset4_llm_sequences.jsonl"`, run all | Finishes in minutes; prints "dropped 0 duplicates"; writes `qlora_patched_results.json`; no "unknown" from parse failures | Pass on CPU with a tiny random model (real weights not tested here); **run on Colab GPU** |
-| TC-D2 | **Full run** (E2) | `SMOKE = False`, same data | 3 seeds; per seed: epoch log with validation macro-F1, early stop, test at k=1/3/5/full, latency p50/p95; mean ± std summary | **Not run** (needs GPU) |
-| TC-D3 | Commands-only + real humans (E2) | `COMMANDS_ONLY = True`, `EXTERNAL_TEST_PATH = "external/kypo/kypo_sessions_ds4_commands_only.jsonl"` | Same outputs, plus "external real humans labelled AI: x ± y" | Pass on CPU smoke test; **run on Colab GPU** |
+| TC-D1 | **Smoke test** (E2) | In `notebooks/qlora_generative_patched.ipynb` set `SMOKE = True`, `DATA_PATH = "data/v2b/dataset4_llm_sequences.jsonl"`, run all | Finishes in minutes; prints "dropped 0 duplicates"; writes `qlora_patched_results.json`; no "unknown" from parse failures | Pass on CPU with a tiny random model (2026-11-04); superseded by the full GPU runs (TC-D2) |
+| TC-D2 | **Full run** (E2) | `SMOKE = False`, same data | 3 seeds; per seed: epoch log with validation macro-F1, early stop, test at k=1/3/5/full, latency p50/p95; mean ± std summary | **Pass** (RTX 3070 Ti, not T4): v2b and v3, 3 seeds each (`docs/TEST_RESULTS_SABRINA.md` §3.9–§3.11) |
+| TC-D3 | Commands-only + real humans (E2) | `COMMANDS_ONLY = True`, `EXTERNAL_TEST_PATH = "external/kypo/kypo_sessions_ds4_commands_only.jsonl"` | Same outputs, plus "external real humans labelled AI: x ± y" | **Pass** (RTX 3070 Ti): Model 3 and v4 on v3, 3 seeds, KYPO and KYPO2 (`docs/TEST_RESULTS_SABRINA.md` §3.12–§3.13) |
 | TC-D4 | Truncation safety | Long v2b sessions (more than 1024 tokens) | Prompt ≤ 1024 tokens, newest step kept, answer never cut | Pass |
-| TC-D6 | **Zero-shot open LLM** (E2) | `ZERO_SHOT = True`, `MODEL_ID = "Qwen/Qwen2.5-7B-Instruct"`, `EVAL_PREFIXES = [3, None]`. Rename the results file afterwards, e.g. `zs_qwen7b.json` | 1 seed (no training); prints "label bias on training transcripts"; predictions spread over all 3 classes | Pass on CPU with **real Qwen2.5-0.5B weights** on 24 sessions: macro-F1 0.32 (chance level, as expected for an untrained 0.5B) |
-| TC-D7 | **Zero-shot API LLM** (E1/E3) | `python scripts/zero_shot_llm.py --model openai/gpt-4o-mini --name gpt4o-mini-zs --dry-run`, then without `--dry-run`. Optionally `--few-shot 3 --name gpt4o-mini-fs3` | Cost estimate; `runs/zero_shot/<name>.jsonl`; parse-failure rate printed; re-running resumes | Pass against a fake server (429 retry, prose and bare-label replies parsed, unparseable replies counted) |
-| TC-D5 | Latency | read `summary.latency_ms` | p50 / p95 ms per command update on T4. **Target: team to set** (suggestion: p95 ≤ 1000 ms) | **Not run** on GPU |
+| TC-D6 | **Zero-shot open LLM** (E2) | `ZERO_SHOT = True`, `MODEL_ID = "Qwen/Qwen2.5-7B-Instruct"`, `EVAL_PREFIXES = [3, None]`. Rename the results file afterwards, e.g. `zs_qwen7b.json` | 1 seed (no training); prints "label bias on training transcripts"; predictions spread over all 3 classes | Pass on CPU with **real Qwen2.5-0.5B weights** on 24 sessions: macro-F1 0.32 (chance level, as expected for an untrained 0.5B). **GPU run on v3 with Qwen2.5-7B (2026-11-18): macro-F1 0.322** (`docs/TEST_RESULTS_SABRINA.md` §5.4) |
+| TC-D7 | **Zero-shot API LLM** (E1/E3) | `python scripts/zero_shot_llm.py --model openai/gpt-4o-mini --name gpt4o-mini-zs --dry-run`, then without `--dry-run`. Optionally `--few-shot 3 --name gpt4o-mini-fs3` | Cost estimate; `runs/zero_shot/<name>.jsonl`; parse-failure rate printed; re-running resumes | Pass against a fake server (429 retry, prose and bare-label replies parsed, unparseable replies counted). **Not run with real API models:** every candidate family overlaps with v3's agents (§4A rule 3) |
+| TC-D5 | Latency | read `summary.latency_ms` | p50 / p95 ms per command update on T4. **Target: team to set** (suggestion: p95 ≤ 1000 ms) | **Measured** (RTX 3070 Ti, after 3 commands): Model 3 p50 168 / p95 183 ms; v4 166 / 173 ms. No target was agreed in advance, so no pass/fail is claimed |
 
 ### E. Data collection tools (E3)
 
 | ID | Test | Steps | Expected | Status |
 |---|---|---|---|---|
-| TC-E1 | Model list | `python scripts/run_agent_matrix.py --list-models llama` | Real OpenRouter IDs with prices | Tested against a fake server only |
-| TC-E2 | Dry run | `python scripts/run_agent_matrix.py --dry-run` | Unknown model IDs are refused; plan + rough cost printed | Fake server only |
-| TC-E3 | Pilot | `--only <family>` | Sessions in `contrib/agent_<family>.jsonl`; refusals saved as `incomplete` | Fake server only |
+| TC-E1 | Model list | `python scripts/run_agent_matrix.py --list-models llama` | Real OpenRouter IDs with prices | **Pass:** real OpenRouter runs recorded v3's agent sessions (`data/v3/DATA_CARD.md`) |
+| TC-E2 | Dry run | `python scripts/run_agent_matrix.py --dry-run` | Unknown model IDs are refused; plan + rough cost printed | **Pass** (real run, `configs/agents.toml`) |
+| TC-E3 | Pilot | `--only <family>` | Sessions in `contrib/agent_<family>.jsonl`; refusals saved as `incomplete` | **Pass:** `contrib/agent_*.jsonl`; 4 incomplete Llama sessions recorded and skipped at merge |
 | TC-E4 | Resume | Stop with Ctrl-C, run the same command again | Finished sessions skipped; incomplete ones retried | Pass (fake server) |
 | TC-E5 | Human recorder | `python scripts/collect_human.py --participant P006` | Consent prompt; task ends automatically when solved; `contrib/human_P006.jsonl` | Pass (scripted input) |
 
@@ -305,6 +305,31 @@ Real-human evidence comes from the two public KYPO sets in §4D.
   | text-cmds | 6.5% (7.0% with augmentation) |
   | gru-cmds | 50.4% (46.4% with augmentation) |
 
+**5. Off-the-shelf LLM (added 2026-11-17, before the run).** §4A's zero-shot comparison is run once.
+- **Model:** `Qwen/Qwen2.5-7B-Instruct`, with `ZERO_SHOT = True`, on v3, with `EVAL_PREFIXES = [3, None]`.
+- **One run only:** there is no training, so there are no seeds.
+- **Prompt:** the zero-shot prompt already in the notebook, unchanged.
+- **Why Qwen:** it is the only judge with no family overlap with v3's agents.
+- **Comparison:** against Model 3 and the baselines, with `compare_models.py --others`.
+- **Nothing else is tried:** no other zero-shot model, and no other prompt.
+- **Code change, memory only:** `prepare_model_for_kbit_training` is skipped in zero-shot mode. It only prepares a model for training, and with it a 7B model would not fit an 8 GB GPU. Trained runs are unaffected.
+- **Results file:** `v3_zs_qwen7b.json`.
+- **Outcome (2026-11-18):** run once as declared. Macro-F1 0.322 on full sessions; Model 3 is better by +0.475 (`docs/TEST_RESULTS_SABRINA.md` §5.4).
+
+**6. Teammate's original QLoRA script on v3 (added 2026-11-18, before the run).**
+- **Script:** `scripts/train_qlora_local.py`, run once on v3 with 3 seeds (42, 123, 456).
+- **Its recipe is unchanged:** LoRA r=8 on q/v, 15 epochs, LR 5e-5, MAX_SEQ_LEN 512, 480-token prompts, JSON generation.
+- **How it is run:** through `run_teammate_v3.py`, which changes only three things:
+  - the data path (v3);
+  - the output path, so `data/qlora_predictions.json` is not overwritten;
+  - it keeps all 3 seeds' predictions instead of only the best seed.
+- **Role:** a reference for Model 3, not a candidate.
+- **Reporting:** mean ± std over all 3 seeds, with the parse-failure rate.
+- **Results file:** `Test-Results-Sabrina/v3_teammate_qlora_local.json`.
+- **Outcome (2026-11-18):** run once as declared. Macro-F1 0.545 ± 0.004, with 37% unparseable outputs; Model 3 is better by +0.258 [+0.224, +0.294] (`docs/TEST_RESULTS_SABRINA.md` §3.16).
+
+**7. Part 8 and Part 9 on v3 (code change, 2026-11-18).** `honeyai/experiments/evasion_analysis.py` and `honeyai/dashboard.py` now default to `data/v3`. Their QLoRA input is the final Model 3: `data/v3/qlora_predictions.json`, the 3-seed ensemble built from `Test-Results-Sabrina/v3_model3_opt1.json`, with macro-F1 0.796. Set `HONEYAI_DATA_DIR=data` to reproduce the earlier v2b numbers. No model was retrained for this.
+
 **4. Caveats to state with these results.**
 - **Calibration overlap:** the simulated humans' timing was calibrated on KYPO target-host sessions
   (`scripts/calibrate_human_timing.py`). KYPO is therefore not independent of the training data on timing.
@@ -327,12 +352,12 @@ Real-human evidence comes from the two public KYPO sets in §4D.
 | GRU | 0.713 ± 0.014 | 0.611 | 0.655 | 0.716 | 0.606 | 0.153 | n/a |
 | GRU, commands only | 0.721 ± 0.012 | 0.614 | 0.675 | 0.694 | 0.668 | 0.160 | 0.091 / 0.129 |
 
-**Model 3 (LLM): not yet measured.** It needs a GPU (TC-D2 on Colab). A reduced CPU run was started here but stopped: at about 100 s per training step it would have taken over 4 hours for a 240-session sanity check. Fill in this row from `qlora_patched_results.json`, then run §4.
+**Model 3 (LLM): measured on GPU after this section was written** (updated 2026-11-18). v2b rows below; the final v3 results, comparisons and real-human checks are in `docs/TEST_RESULTS_SABRINA.md` (§2, §3.10–§3.13, §5).
 
 | Model | Full | k=1 | k=3 | k=5 | AI recall (evasive) | Human → AI | KYPO → AI |
 |---|---|---|---|---|---|---|---|
-| QLoRA 0.5B (TC-D2) | | | | | | | |
-| QLoRA 0.5B, commands only (TC-D3) | | | | | | | |
+| QLoRA 0.5B, Model 3 (TC-D2, v2b, 3 seeds) | 0.719 ± 0.036 | 0.391 | 0.670 | 0.713 | 0.705 (ensemble) | 0.137 | n/a |
+| QLoRA 0.5B, commands only (TC-D3) | run on v3 instead: 0.763 ± 0.036 | 0.413 | 0.543 | 0.747 | 0.870 (ensemble) | 0.108 | 0.228 ± 0.093 (KYPO), 0.296 ± 0.165 (KYPO2) |
 
 **Comparison script self-test** (GRU treated as the "LLM", full sessions, 830 sessions, 5,000 resamples):
 
@@ -350,18 +375,19 @@ This is why the paired test matters: by raw numbers the GRU (0.717) "beats" XGBo
 
 ## 6. Acceptance criteria ("ready for the report")
 
-- [ ] TC-A1–A6 and TC-B1–B4 pass on Colab
-- [ ] TC-C1 baselines reproduced within tolerance
-- [ ] TC-D2 full LLM run: 3 seeds, settings chosen on validation, results file saved
-- [ ] TC-D3 commands-only + KYPO run
-- [ ] §4 comparison run for full sessions and k=3; verdicts recorded
-- [ ] Latency measured and compared with the agreed target
-- [ ] Every number in the report names its data file, split, seeds and settings
-- [ ] (When real data exists) everything repeated on `data/v3`
+- [x] TC-A1–A6 and TC-B1–B4 pass (development environment; not re-run on Colab)
+- [x] TC-C1 baselines reproduced within tolerance (v3 rebuilt on a second machine, 2026-11-17)
+- [x] TC-D2 full LLM run: 3 seeds, settings chosen on validation, results file saved
+- [x] TC-D3 commands-only + KYPO run (plus KYPO2)
+- [x] §4 comparison run for full sessions and k=3; verdicts recorded
+- [ ] Latency measured and compared with the agreed target: **measured, but no target was agreed** (TC-D5)
+- [ ] Every number in the report names its data file, split, seeds and settings: **to check in the final report**
+- [x] (When real data exists) everything repeated on `data/v3`
 
 ## 7. Known limitations (state these in the report)
 
 - Human and AI sessions in v2b are **simulated policies**; only the scripts are real. Only human *timing* is calibrated to real data.
+  - v3 adds 287 real-LLM-agent test sessions (5 model families), but its humans are still simulated.
 - No real human sessions were collected by the team. KYPO and KYPO2 are the real-human evidence, but they use different tasks and have no outputs, and KYPO was used to calibrate simulated human timing.
 - Which evasions succeed depends on simulator assumptions (calibration changed `timing_mimicry` recall from 0.75 to 0.91).
 - XGBoost's cross-validation score (0.965) is inflated; use the test score.
