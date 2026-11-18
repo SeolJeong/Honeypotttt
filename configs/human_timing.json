@@ -1,0 +1,72 @@
+{
+ "params": {
+  "median_lo": 2,
+  "median_hi": 10,
+  "sigma_lo": 0.8,
+  "sigma_hi": 2.2
+ },
+ "target": {
+  "source": "KYPO (Svabensky et al. 2021, CC BY 4.0)",
+  "hosts": "target",
+  "excluded_after": [
+   "apt",
+   "apt-get",
+   "curl",
+   "fcrackzip",
+   "gcc",
+   "hashcat",
+   "hydra",
+   "john",
+   "less",
+   "make",
+   "man",
+   "more",
+   "msfconsole",
+   "msfdb",
+   "nano",
+   "nikto",
+   "nmap",
+   "ping",
+   "python",
+   "python3",
+   "scp",
+   "service",
+   "sleep",
+   "sqlmap",
+   "ssh",
+   "systemctl",
+   "tail",
+   "top",
+   "vi",
+   "vim",
+   "wget"
+  ],
+  "n_gaps": 2620,
+  "quantiles_s": {
+   "p10": 0.74,
+   "p25": 1.8175000000000001,
+   "p50": 4.63,
+   "p75": 14.535,
+   "p90": 52.53999999999997
+  }
+ },
+ "v2_default_quantiles_s": {
+  "p10": 2.065,
+  "p25": 3.5775,
+  "p50": 6.415,
+  "p75": 11.3,
+  "p90": 19.07
+ },
+ "calibrated_quantiles_s": {
+  "p10": 0.6480000000000001,
+  "p25": 1.7149999999999999,
+  "p50": 5.15,
+  "p75": 15.46,
+  "p90": 48.42
+ },
+ "loss": {
+  "v2_default": 0.5417141582216949,
+  "calibrated": 0.0085598612432733
+ },
+ "created": "2026-11-04"
+}

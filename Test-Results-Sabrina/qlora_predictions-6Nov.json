@@ -1,0 +1,5002 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "best_seed": 42,
+  "macro_f1_mean": 0.513,
+  "macro_f1_std": 0.011,
+  "all_seeds": [
+    {
+      "seed": 42,
+      "macro_f1": 0.5274938613409178
+    },
+    {
+      "seed": 123,
+      "macro_f1": 0.5029174968748197
+    },
+    {
+      "seed": 456,
+      "macro_f1": 0.5075119527674272
+    }
+  ],
+  "predictions": [
+    {
+      "session_id": "V2-00481",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00482",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00483",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00484",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00485",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00486",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00487",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00488",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00489",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00490",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00491",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00492",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00493",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00494",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00495",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00496",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00497",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00498",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00499",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00500",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00501",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00502",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00503",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00504",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00505",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00506",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00507",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00508",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00509",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00510",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00511",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00512",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00513",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00514",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00515",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00516",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00517",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00518",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00519",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00520",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00521",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00522",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00523",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00524",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00525",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00526",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00527",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00528",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00529",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00530",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00531",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00532",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00533",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00534",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00535",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00536",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00537",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00538",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00539",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00540",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00541",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00542",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00543",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00544",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00545",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00546",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00547",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00548",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00549",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00550",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00551",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00552",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00553",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00554",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00555",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00556",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00557",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00558",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00559",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00560",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00561",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00562",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00563",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00564",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00565",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00566",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00567",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00568",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00569",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00570",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00571",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00572",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00573",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00574",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00575",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00576",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00577",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00578",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00579",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00580",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00581",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00582",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00583",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00584",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00585",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00586",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00587",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00588",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00589",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00590",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00591",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00592",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00593",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00594",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00595",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00596",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00597",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00598",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00599",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00600",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00601",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00602",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00603",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00604",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00605",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00606",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00607",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00608",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00609",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00610",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00611",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00612",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00613",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00614",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00615",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00616",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00617",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00618",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00619",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00620",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00621",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00622",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00623",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00624",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00625",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00626",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00627",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00628",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00629",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00630",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00631",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00632",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00633",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00634",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00635",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00636",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00637",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00638",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00639",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00640",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00641",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00642",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00643",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00644",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00645",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00646",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00647",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00648",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00649",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00650",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00651",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00652",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00653",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00654",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00655",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00656",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00657",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00658",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00659",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00660",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00661",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00662",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00663",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00664",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00665",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00666",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00667",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00668",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00669",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00670",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00671",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00672",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00673",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00674",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00675",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00676",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00677",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00678",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00679",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00680",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00681",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00682",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00683",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00684",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00685",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00686",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00687",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00688",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00689",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00690",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00691",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00692",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00693",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00694",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00695",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00696",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00697",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00698",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00699",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00700",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00701",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00702",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00703",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00704",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00705",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00706",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00707",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00708",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.999
+    },
+    {
+      "session_id": "V2-00709",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00710",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00711",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00712",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00713",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00714",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00715",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00716",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00717",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00718",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00719",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00720",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00721",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00722",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00723",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00724",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00725",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00726",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00727",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00728",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00729",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00730",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00731",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00732",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00733",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00734",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00735",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00736",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00737",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00738",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00739",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00740",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00741",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00742",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00743",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00744",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00745",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00746",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00747",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00748",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00749",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00750",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00751",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00752",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00753",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00754",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00755",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00756",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00757",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00758",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00759",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00760",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00761",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00762",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00763",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00764",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00765",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00766",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00767",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00768",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00769",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00770",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00771",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00772",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00773",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00774",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00775",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00776",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00777",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00778",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00779",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00780",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00781",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00782",
+      "true_label": "human",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00783",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00784",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00785",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00786",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-00787",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00788",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00789",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00790",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00791",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00792",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00793",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00794",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00795",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00796",
+      "true_label": "human",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-00797",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00798",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00799",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-00800",
+      "true_label": "human",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01249",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01250",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01251",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01252",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01253",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01254",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01255",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01256",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01257",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01258",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01259",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01260",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01261",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01262",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01263",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01264",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01265",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01266",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01267",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-01268",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01269",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01270",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01271",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01272",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01273",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01274",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01275",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01276",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01277",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01278",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01279",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01280",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01281",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01282",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01283",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01284",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01285",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01286",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01287",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01288",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01289",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01290",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01291",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01292",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01293",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01294",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01295",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01296",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01297",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01298",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01299",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01300",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01301",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01302",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01303",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01304",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01305",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01306",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01307",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01308",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01309",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01310",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01311",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01312",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01313",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01314",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01315",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01316",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01317",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-01318",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01319",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01320",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01321",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01322",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01323",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01324",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01325",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01326",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01327",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01328",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01329",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01330",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01331",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01332",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01333",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01334",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01335",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01336",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.99
+    },
+    {
+      "session_id": "V2-01337",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01338",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01339",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01340",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01341",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01342",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01343",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01344",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01345",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-01346",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01347",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01348",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01349",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01350",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01351",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01352",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-01353",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01354",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01355",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01356",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01357",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01358",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01359",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01360",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01361",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01362",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01363",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01364",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01365",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01366",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01367",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01368",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01369",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01370",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01371",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01372",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01373",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01374",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01375",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01376",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01377",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01378",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01379",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01380",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01381",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01382",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01383",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01384",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01385",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01387",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01388",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01390",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01391",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01392",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01393",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01394",
+      "true_label": "scripted",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01395",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01396",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01397",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01398",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01399",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-01400",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01401",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01402",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01403",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-01404",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01405",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01406",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01407",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01408",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-01409",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01410",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01411",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01412",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01413",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01414",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01415",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01416",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01417",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01418",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01419",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01420",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01421",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01422",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01423",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01424",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01425",
+      "true_label": "scripted",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01426",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01427",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01428",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01429",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01430",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01431",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01432",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01433",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01434",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01435",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01436",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01437",
+      "true_label": "scripted",
+      "predicted_label": "human",
+      "confidence": 0.9
+    },
+    {
+      "session_id": "V2-01438",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01439",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01440",
+      "true_label": "scripted",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01721",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01722",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01723",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01724",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01725",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01726",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01727",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01728",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01729",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01730",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01731",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01732",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01733",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01734",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01735",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01736",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01737",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01738",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01739",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01740",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01741",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01742",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01743",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01744",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01745",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01746",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01747",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01748",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01749",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01750",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-01751",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01752",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01753",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01754",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01755",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01756",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01757",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01758",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01759",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01760",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01761",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01762",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01763",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01764",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01765",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01766",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-01767",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-01768",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02049",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02050",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02051",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-02052",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02053",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02054",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02055",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02056",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02057",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02058",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02059",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02060",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02061",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02062",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02063",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02064",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02065",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02066",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02067",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02068",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02069",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02070",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02071",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02072",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02073",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02074",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02075",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02076",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02077",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02078",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02079",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02080",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02081",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02082",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02083",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-02084",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02085",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02086",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02087",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02088",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02089",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02090",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02091",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02092",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02093",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02094",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02095",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02096",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02097",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02098",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02099",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02100",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02101",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02102",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02103",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02104",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02105",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02106",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02107",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02108",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02109",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02110",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02111",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02112",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-02113",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02114",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02115",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02116",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02117",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02118",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02119",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02120",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02121",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02122",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02123",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02124",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02125",
+      "true_label": "AI-driven",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02126",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02127",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02128",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02129",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02130",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02131",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02132",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02133",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02134",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02135",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02136",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02137",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02138",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02139",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02140",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02141",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02142",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02143",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02144",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02145",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02146",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02147",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02148",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02149",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02150",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02151",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02152",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02153",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02154",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02155",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02156",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02157",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02158",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02159",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02160",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02161",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02162",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02163",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02164",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02165",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02166",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02167",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02168",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02169",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02170",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02171",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02172",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02173",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02174",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02175",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02176",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02177",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02178",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02179",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02180",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02181",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02182",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02183",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02184",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02185",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02186",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02187",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02188",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02189",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02190",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-02191",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02192",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02193",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02194",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02195",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02196",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02197",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02198",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02199",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02200",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02201",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02202",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02203",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02204",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02205",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02206",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02207",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02208",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02209",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02210",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02211",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02212",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02213",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02214",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02215",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02216",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02217",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.92
+    },
+    {
+      "session_id": "V2-02218",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02219",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02220",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-02221",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02222",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02223",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02224",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02225",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02226",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02227",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-02228",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02229",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02230",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02231",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02232",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02233",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02234",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02235",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02236",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02237",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02238",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02239",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02240",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02241",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02242",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02243",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02244",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02245",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02246",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02247",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02248",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02249",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02250",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02251",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.5
+    },
+    {
+      "session_id": "V2-02252",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02253",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02254",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02255",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02256",
+      "true_label": "AI-driven",
+      "predicted_label": "scripted",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02257",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02258",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02259",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02260",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02261",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02262",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02263",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02264",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02265",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02266",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02267",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02268",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02269",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02270",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02271",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02272",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02273",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02274",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02275",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02276",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02277",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02278",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 99.9
+    },
+    {
+      "session_id": "V2-02279",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02280",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02281",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02282",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02283",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02284",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02285",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02286",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02287",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02288",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02289",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02290",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02291",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02292",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02293",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02294",
+      "true_label": "AI-driven",
+      "predicted_label": "AI-driven",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02295",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02296",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02297",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02298",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02299",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02300",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02301",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02302",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02303",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02304",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02305",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02306",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02307",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02308",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02309",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02310",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02311",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02312",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02313",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02314",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02315",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02316",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02317",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    },
+    {
+      "session_id": "V2-02318",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02319",
+      "true_label": "AI-driven",
+      "predicted_label": "human",
+      "confidence": 0.95
+    },
+    {
+      "session_id": "V2-02320",
+      "true_label": "AI-driven",
+      "predicted_label": "unknown",
+      "confidence": 0.0
+    }
+  ]
+}

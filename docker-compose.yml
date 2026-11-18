@@ -1,0 +1,10 @@
+services:
+  honeyai:
+    build: .
+    image: honeyai:latest
+    env_file: .env            # holds OPENROUTER_API_KEY; never commit .env
+    volumes:
+      - .:/app                # code + data + contrib/ live on your machine, not in the container
+    working_dir: /app
+    stdin_open: true          # needed for collect_human.py (interactive)
+    tty: true

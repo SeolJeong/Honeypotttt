@@ -1,0 +1,9 @@
+# Model 3 (QLoRA) — tested target: Colab T4, Python 3.10+/3.12
+torch>=2.3
+transformers>=4.45
+peft>=0.12
+bitsandbytes>=0.43
+accelerate>=0.33
+safetensors
+scikit-learn>=1.3
+numpy

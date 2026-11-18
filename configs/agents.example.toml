@@ -1,0 +1,47 @@
+# Agent matrix for scripts/run_agent_matrix.py
+# Copy to configs/agents.toml and edit.
+#
+# !! Model ids change on OpenRouter. These are EXAMPLES and were NOT verified
+# !! (openrouter.ai was unreachable when this file was written). The runner
+# !! refuses to start if an id doesn't exist. Find real ids with:
+# !!     python scripts/run_agent_matrix.py --list-models llama
+#
+# Rules for valid data:
+#  - one [[agent]] = one model family; `family` labels must be unique and stable
+#  - you need >= 3 families: >= 2 for training, >= 1 held out for testing
+#  - don't use Qwen models as agents: Qwen is the detector / zero-shot baseline
+#  - keep each family's settings fixed once you start collecting
+
+[defaults]
+base_url    = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+evasions    = "all"          # or e.g. ["none", "timing_mimicry"]
+tasks       = "all"
+reps        = 2              # sessions per (evasion, task): 7 x 8 x 2 = 112 per family
+temperature = 0.7
+contributor = "P1"
+
+[[agent]]
+family = "llama3.1-8b"
+model  = "meta-llama/llama-3.1-8b-instruct"
+# Optional but recommended: pin ONE upstream provider per family so recorded
+# timing isn't a routing artefact. Provider names: see the model's page on
+# openrouter.ai. Requests fail (not silently reroute) if it's unavailable.
+# provider_order = ["<ProviderName>"]
+
+[[agent]]
+family = "mistral-7b"
+model  = "mistralai/mistral-7b-instruct"
+
+[[agent]]
+family = "gpt4o-mini"
+model  = "openai/gpt-4o-mini"
+
+[[agent]]
+family = "gemini-flash"
+model  = "google/gemini-2.0-flash-001"
+
+# A cheap Claude model makes a good held-out family:
+# [[agent]]
+# family = "claude-haiku"
+# model  = "anthropic/claude-3.5-haiku"
