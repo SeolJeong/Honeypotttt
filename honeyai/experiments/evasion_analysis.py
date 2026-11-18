@@ -23,7 +23,9 @@ import numpy as np
 from sklearn.metrics import f1_score, classification_report
 
 # --- paths ---
-DATA_DIR = "data"
+# Data set: v3 (final, fresh test set) by default. Set HONEYAI_DATA_DIR=data to reproduce the earlier v2b numbers.
+# QLoRA = final Model 3 (3-seed ensemble, data/v3/qlora_predictions.json; see docs/TEST_RESULTS_SABRINA.md §3.10).
+DATA_DIR = os.environ.get("HONEYAI_DATA_DIR", os.path.join("data", "v3"))
 DS1 = os.path.join(DATA_DIR, "dataset1_sessions.json")
 DS2 = os.path.join(DATA_DIR, "dataset2_tabular_features.csv")
 QLORA_PREDS = os.path.join(DATA_DIR, "qlora_predictions.json")
