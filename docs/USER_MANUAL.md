@@ -109,7 +109,7 @@ Honeypotttt/
 ├── external/                      real-world data (never trained on)
 │   ├── cowrie/cowrie.json         raw log from the team's live honeypot (about 5 h, 3 Nov 2026)
 │   ├── kypo/                      KYPO real humans (1,414 sessions)
-│   └── kypo2/                     KYPO2 real humans (215 sessions): not in git, build it with §5.3
+│   └── kypo2/                     KYPO2 real humans (215 sessions) + the re-zipped source used to convert them
 ├── honeyai/                       Python package
 │   ├── sim/                       session simulator (fake Linux host, actors, recording)
 │   ├── llm/                       LLM text format + evaluation metrics
@@ -129,8 +129,9 @@ Honeypotttt/
 └── Dockerfile, docker-compose.yml data-collection container (CPU only)
 ```
 
-**Not in git** (created when you run things): `.venv/`, `runs/` (model outputs, saved adapters), `external/kypo2/`,
-`.env` (API keys).
+**Not in git** (created when you run things): `.venv/`, `runs/` (model outputs, saved adapters), `.env` (API keys).
+`external/` is git-ignored, but every dataset the results use is force-added: KYPO, KYPO2 (converted files and
+sources) and the Cowrie log.
 
 **Which data each part uses by default:**
 
@@ -265,11 +266,11 @@ training. The details are in `data/v3/DATA_CARD.md`.
 
 KYPO contains real trainees' commands from cybersecurity training (Švábenský et al., *Data in Brief* 38, 2021,
 CC BY 4.0). It has **no server responses**, so only commands-only models can be scored on it. The converted files
-are already in `external/kypo/`. To rebuild them:
+and the original download (`external/kypo/data.zip`) are in the repo. To rebuild the converted files:
 
 ```powershell
-Invoke-WebRequest -Uri "https://zenodo.org/records/8136017/files/data.zip?download=1" -OutFile external\kypo\data.zip
-python scripts/convert_kypo.py
+python scripts/convert_kypo.py              # uses external/kypo/data.zip
+# (if data.zip is missing: Invoke-WebRequest -Uri "https://zenodo.org/records/8136017/files/data.zip?download=1" -OutFile external\kypo\data.zip)
 ```
 
 **Expected:**
@@ -285,7 +286,20 @@ independent on timing. KYPO2 is.
 ### 5.3 KYPO2 (second, fully independent real-human set)
 
 KYPO2 is from Ošlejšek et al., *Data in Brief* 52 (2024), Zenodo record 10298187, CC BY 4.0. Only `data1` is used
-(52 trainees); `data2` duplicates KYPO. It is not in git; build it like this:
+(52 trainees); `data2` duplicates KYPO.
+
+The converted files used for every reported KYPO2 result are in the repo:
+- `external/kypo2/kypo2_sessions.json` (baselines);
+- `external/kypo2/kypo2_sessions_ds4_commands_only.jsonl` (LLM);
+- `external/kypo2/data1_commands.zip`, the re-zipped source they were converted from.
+
+To reproduce the committed files exactly, convert the committed source:
+
+```powershell
+python scripts/convert_kypo.py --zip external/kypo2/data1_commands.zip --out external/kypo2/kypo2_sessions.json
+```
+
+To rebuild from the original Zenodo download instead:
 
 ```powershell
 mkdir external\kypo2
@@ -298,8 +312,10 @@ python scripts/convert_kypo.py --zip external/kypo2/data1_commands.zip --out ext
 - `trainees 52 -> 215 sessions (12 on target hosts), 2601 commands`
 - gaps p10 1.0 / p50 14.2 / p90 130.4 s
 
-**Note on session IDs:** they contain the folder name used inside the re-zipped file. Two conversions with different
-folder names give the same 215 sessions with different ID prefixes; match them on the trailing `sbNNN-sN-wN` part.
+**Note on session IDs:** they contain the folder name used inside the re-zipped file. The committed files and the LLM
+result files use `KYPO-Locust_3302_insider-2022-11-28-...`. A rebuild with the one-liner above gives the same 215
+sessions with a different ID prefix; match them on the trailing `sbNNN-sN-wN` part, or convert the committed
+`data1_commands.zip` to get identical IDs.
 
 ### 5.4 Cowrie wild data
 
