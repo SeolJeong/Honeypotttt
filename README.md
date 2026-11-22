@@ -190,7 +190,7 @@ Honeypotttt/
 - **False alarms on real people:** Model 3 raises more of them than simple timing or text methods, and its rate depends strongly on the training seed.
 - **Simulated agents:** which evasion strategies succeed depends on the simulator's assumptions. Real LLM agents behaved differently from the simulated combined agent.
 - **v4 is post hoc:** it was designed after seeing development test errors. It is confirmed on fresh data, but is not the pre-specified model.
-- **Wild data:** small (12 sessions, about 5 hours) and unlabelled.
+- **Wild data:** small (12 interactive sessions from about 3 hours of one honeypot) and unlabelled.
 
 ---
 

@@ -712,7 +712,7 @@ covers the real LLM agents only (all 5 families), computed from the §3.10 model
 - As with Part 8, its XGBoost and GRU use one seed while QLoRA is the 3-seed ensemble, so the dashboard is a demo and §3.10 holds the comparison.
 
 **Wild Cowrie sessions** (`python scripts/parse_cowrie.py external/cowrie/cowrie.json --classify`):
-- **The log:** 13,315 events and 1,708 raw sessions from the team's live honeypot (about 5 hours, 3 Nov).
+- **The log:** 13,315 events, 1,708 raw sessions and 122 source IPs from the team's live honeypot (5 Nov 2026, 00:02–03:14 UTC).
   - 35 sessions never authenticated.
   - 1,663 had fewer than 2 commands.
   - **12 interactive sessions remain.**

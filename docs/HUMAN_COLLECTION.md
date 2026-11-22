@@ -2,6 +2,9 @@
 
 > **Not carried out.** Dropped on 2026-11-10 (TEST_PLAN §4C): the only available participant was a team member.
 > This guide is kept for future work.
+>
+> `contrib/human_P101.jsonl` is a single test session recorded by a team member on 2026-11-10 (it should have used
+> a `P19x` ID). It is not part of any dataset and is not used in any result.
 
 Real people solve short tasks on the **simulated** Linux server, the same one the AI agents attack.
 These sessions are the v3 real-human data. Nothing touches a real machine.

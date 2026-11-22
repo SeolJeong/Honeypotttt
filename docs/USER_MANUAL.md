@@ -107,7 +107,7 @@ Honeypotttt/
 │       ├── qlora_predictions.json final Model 3 (3-seed ensemble) for Part 8 and the dashboard
 │       └── DATA_CARD.md           how v3 was built and the rules for using it
 ├── external/                      real-world data (never trained on)
-│   ├── cowrie/cowrie.json         raw log from the team's live honeypot (about 5 h, 3 Nov 2026)
+│   ├── cowrie/cowrie.json         raw log from the team's live honeypot (about 3 h, 5 Nov 2026 UTC)
 │   ├── kypo/                      KYPO real humans (1,414 sessions)
 │   └── kypo2/                     KYPO2 real humans (215 sessions) + the re-zipped source used to convert them
 ├── honeyai/                       Python package
@@ -319,7 +319,8 @@ sessions with a different ID prefix; match them on the trailing `sbNNN-sN-wN` pa
 
 ### 5.4 Cowrie wild data
 
-`external/cowrie/cowrie.json` is the raw log of the team's live honeypot: 13,315 events and 1,708 raw sessions. It is
+`external/cowrie/cowrie.json` is the raw log of the team's live honeypot: 13,315 events, 1,708 raw sessions and 122
+source IPs, recorded 5 Nov 2026 00:02–03:14 UTC. It is
 **unlabelled**: it is used for case studies and the demo, never for training or accuracy (§11.3).
 
 ---
@@ -789,7 +790,7 @@ arithmetic is not bit-exact across GPUs and library versions.
 - **The full models are untested on real people.** They read server responses, and no real-human set has them.
 - **Model 3 flags real people as AI more often than simple methods do.** On KYPO and KYPO2, the commands-only Model 3 flags 23–34% of sessions (seed-dependent), against 3–7% for timing and TF-IDF. v4 flags about 9–11%.
 - **v4 is post hoc.** It was designed after seeing v2b test errors and is reported as a confirmed post-hoc finding.
-- **The wild data is small and unlabelled:** 12 sessions from 5 hours of one honeypot.
+- **The wild data is small and unlabelled:** 12 interactive sessions from about 3 hours of one honeypot.
 
 The full list is in `docs/TEST_PLAN.md` §7 and test results §7.
 

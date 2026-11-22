@@ -1,18 +1,30 @@
-# HoneyAI datasets: what's in `honeyai_datasets.zip`
+# HoneyAI datasets: data cards
 
-Version 2026-11-04. This file is sent separately and is not inside the zip.
+Version 2026-11-22 (index updated for the final repository; the cards below were written as each set was added).
+Every dataset used by a reported result is in the repository. The final evaluation set has its own card:
+[`data/v3/DATA_CARD.md`](../data/v3/DATA_CARD.md).
 
-| Path in zip | Sessions | What it is | Use for |
+| Path in repo | Sessions | What it is | Use for |
 |---|---|---|---|
-| `data/v2b/` | 2,312 | **Current shared development set.** Simulator data with human timing calibrated to real humans (KYPO) | All model development and comparison now |
-| `data/v2/` | 2,311 | Same simulator, original (uncalibrated) human timing | Reference only (earlier numbers) |
-| `data/dataset1_sessions.json`, `dataset2_…`, `dataset4_…` (v1) | 208 | Original team data. **Script-generated:** placeholder responses, inserted typos | Retired. History only; never report as participant or LLM-agent data |
+| `data/v3/` | 2,818 (1,705 train / 1,113 test) | **Final evaluation set.** New simulated sessions plus real LLM-agent sessions (5 families); every test session is new | All reported results (see `data/v3/DATA_CARD.md`) |
+| `data/dataset1_sessions.json`, `dataset2_…`, `dataset4_…` (**v2b**) | 2,312 (1,482 / 830) | Development set: simulator data with human timing calibrated to real humans (KYPO). Its test set was used during development | Development results only; v2b test scores are biased upward |
 | `data/dataset3_auth_noise.csv` | 1,000 records | Stage-1 login-noise filter data. `auth_success` matches the label exactly | Stage-1 filter; don't report its score as a result |
-| `external/kypo/kypo_sessions.json` | 1,414 | **Real humans** (KYPO), converted to HoneyAI sessions; commands + timing, **no outputs** | Real-human check of commands-only models; timing calibration |
-| `external/kypo/kypo_sessions_ds4_commands_only.jsonl` | 1,414 | The same in LLM text format, commands only | `EXTERNAL_TEST_PATH` in the patched LLM notebook |
-| `configs/human_timing.json` | — | Calibrated timing parameters plus their provenance | Reproducing v2b |
+| `external/kypo/kypo_sessions.json`, `…_ds4_commands_only.jsonl` | 1,414 | **Real humans** (KYPO), converted to HoneyAI sessions; commands + timing, **no outputs** | Real-human check of commands-only models; timing calibration |
+| `external/kypo/data.zip` | — | The original KYPO download (Zenodo 8136017); `scripts/convert_kypo.py` rebuilds the two files above from it exactly | Reproducing KYPO |
+| `external/kypo2/kypo2_sessions.json`, `…_ds4_commands_only.jsonl`, `data1_commands.zip` | 215 | **Real humans** (KYPO2), fully independent; plus the re-zipped source that reproduces them exactly | Second real-human check (see the KYPO2 card below) |
+| `external/cowrie/cowrie.json` | 13,315 events | Raw log of the team's live Cowrie honeypot: 1,708 sessions, 122 source IPs, 5 Nov 2026 00:02–03:14 UTC. Unlabelled | Case study and demo only |
+| `data/wild_sessions.json` | 12 | Interactive sessions parsed from the Cowrie log by `scripts/parse_cowrie.py` | Case study and demo only |
+| `contrib/agent_*.jsonl` | 560 recorded | Raw real LLM-agent sessions (OpenRouter, against the simulator) merged into v3 | Source of v3's real-agent sessions |
+| `configs/human_timing.json` | — | Calibrated timing parameters plus their provenance | Reproducing v2b and v3 |
 
-In each `data/vX/` folder, `dataset1_sessions.json` is the source. `dataset2_tabular_features.csv` (XGBoost) and `dataset4_llm_sequences.jsonl` (LLM) are derived from it, so **regenerate them, never hand-edit**.
+**Not in the repository:**
+- **v1** (the original 208-session team data): script-generated, retired.
+- **v2** (2,311 sessions, uncalibrated human timing): reference only. Regenerate it with `python scripts/generate_sessions.py` (writes `data/v2/`).
+
+The v2/v2b card below refers to the folder names used while the data was being built (`data/v2/`, `data/v2b/`). In this
+repository, v2b is the set in `data/`.
+
+In each data folder (`data/`, `data/v3/`), `dataset1_sessions.json` is the source. `dataset2_tabular_features.csv` (XGBoost) and `dataset4_llm_sequences.jsonl` (LLM) are derived from it, so **regenerate them, never hand-edit**.
 
 ---
 
@@ -89,8 +101,9 @@ In each `data/vX/` folder, `dataset1_sessions.json` is the source. `dataset2_tab
 ## Not included
 
 - The teammate's 824-session "large" file: generated like v1, with 19 duplicates and 23 test sessions identical to training ones. Development only, if at all.
-- Raw KYPO `data.zip`: download it from Zenodo (link in `docs/DATA_PLAN.md` §3A).
-- Wild data (Cowrie, 4-month, CyberLab): unlabelled. Download links are in `docs/DATA_PLAN.md`.
+- Other wild datasets considered in `docs/DATA_PLAN.md` (4-month SSH botnet, CyberLab, Palisade logs): not used for any reported result.
+
+---
 
 ## KYPO2: second real-human set (added 2026-11-10)
 

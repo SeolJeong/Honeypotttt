@@ -20,7 +20,9 @@ unzip -q -o honeyai_code.zip -d honeyai && unzip -q -o honeyai_datasets.zip -d h
 pip install -q xgboost            # E1; E2 also: pip install -q -r requirements-llm.txt
 ```
 
-**Out of scope here:** collecting real participant data (needs ethics approval first), the dashboard and API (not built yet).
+**Out of scope here:** collecting real participant data (dropped, see `docs/HUMAN_COLLECTION.md`) and an API. The dashboard and Cowrie parser (Part 9) are covered in `docs/USER_MANUAL.md` §11.
+
+**Paths:** this plan was written while v2b lived in `data/v2b/`. In the repository, v2b is in `data/` and the final set in `data/v3/`; the commands below use the repository paths.
 
 ---
 
@@ -32,12 +34,12 @@ Columns: **Status** = result in the development environment on 2026-11-04. Fill 
 
 | ID | Test | Steps | Expected | Status | Colab result / tester |
 |---|---|---|---|---|---|
-| TC-A1 | Files present | `ls data/v2b data/v2 external/kypo` | `dataset1_sessions.json`, `dataset2_tabular_features.csv`, `dataset4_llm_sequences.jsonl` in v2 and v2b; `kypo_sessions.json` + `kypo_sessions_ds4_commands_only.jsonl` | Pass | |
-| TC-A2 | **Reproducibility** | `python scripts/generate_sessions.py --human-timing configs/human_timing.json --out data/v2b_check` then `cmp data/v2b_check/dataset1_sessions.json data/v2b/dataset1_sessions.json` | Prints "dropped 6 within-split duplicates, 2 test sessions identical to a training session"; `cmp` prints nothing (identical) | Pass | |
-| TC-A3 | Counts | `python -c "import json,collections as C; s=json.load(open('data/v2b/dataset1_sessions.json')); print(len(s), C.Counter((x['split'],x['actor_label']) for x in s))"` | 2312; train 480 human / 446 scripted / 556 AI; test 320 / 190 / 320 | Pass | |
+| TC-A1 | Files present | `ls data data/v3 external/kypo external/kypo2` | `dataset1_sessions.json`, `dataset2_tabular_features.csv`, `dataset4_llm_sequences.jsonl` in `data/` (v2b) and `data/v3/`; `kypo_sessions.json` + `kypo_sessions_ds4_commands_only.jsonl` | Pass | |
+| TC-A2 | **Reproducibility** | `python scripts/generate_sessions.py --human-timing configs/human_timing.json --out data/v2b_check` then `cmp data/v2b_check/dataset1_sessions.json data/dataset1_sessions.json` | Prints "dropped 6 within-split duplicates, 2 test sessions identical to a training session"; `cmp` prints nothing (identical) | Pass | |
+| TC-A3 | Counts | `python -c "import json,collections as C; s=json.load(open('data/dataset1_sessions.json')); print(len(s), C.Counter((x['split'],x['actor_label']) for x in s))"` | 2312; train 480 human / 446 scripted / 556 AI; test 320 / 190 / 320 | Pass | |
 | TC-A4 | **No duplicates / train-test leakage** | Count duplicate `interleaved_text` in `dataset4` and test texts that also appear in train | 0 and 0 | Pass | |
 | TC-A5 | **Group-disjoint splits** | Compare train vs test `participant_id` (humans) and `generator_family` | No participant overlap; test-only families: `alternative_commands`, `human_like_delays`, `retry_on_failure`, `sim_agent_c` | Pass | |
-| TC-A6 | Merge validation | `python scripts/merge_sessions.py --base data/v2b/dataset1_sessions.json --out /tmp/m` | "merged 2312 sessions (0 invalid, 0 incomplete skipped)"; no leakage warnings | Pass | |
+| TC-A6 | Merge validation | `python scripts/merge_sessions.py --base data/dataset1_sessions.json --out /tmp/m` | "merged 2312 sessions (0 invalid, 0 incomplete skipped)"; no leakage warnings | Pass | |
 
 ### B. Real-human (KYPO) pipeline
 
@@ -46,20 +48,20 @@ Columns: **Status** = result in the development environment on 2026-11-04. Fill 
 | TC-B1 | Download | `curl -sSL -o external/kypo/data.zip "https://zenodo.org/records/8136017/files/data.zip?download=1"` | about 0.4 MB zip | Pass | |
 | TC-B2 | Convert | `python scripts/convert_kypo.py` | "trainees 267 -> 1414 sessions (357 on target hosts), 14658 commands"; gap p10 0.9 / p50 11.9 / p90 129.9 s | Pass | |
 | TC-B3 | Calibrate | `python scripts/calibrate_human_timing.py` | best `median_lo 2, median_hi 10, sigma_lo 0.8, sigma_hi 2.2`; loss 0.542 → **0.009**; matches `configs/human_timing.json` | Pass | |
-| TC-B4 | Real-human check | `python scripts/eval_kypo.py --train data/v2b/dataset1_sessions.json` | KYPO labelled AI: text-cmds 0.080 (target hosts 0.157), timing 0.050 (0.151) | Pass | |
+| TC-B4 | Real-human check | `python scripts/eval_kypo.py --train data/dataset1_sessions.json` | KYPO labelled AI: text-cmds 0.080 (target hosts 0.157), timing 0.050 (0.151) | Pass | |
 
 ### C. Baselines (Models 1, 2 and reference models)
 
 | ID | Test | Steps | Expected (full-session macro-F1) | Tolerance | Status |
 |---|---|---|---|---|---|
-| TC-C1 | All baselines | `python scripts/run_baselines.py --data data/v2b/dataset1_sessions.json --out runs/baselines_v2b.json` | timing 0.667 · text 0.765 · text-cmds 0.737 · XGBoost 0.694 ± 0.001 · GRU 0.713 ± 0.014 · GRU-cmds 0.721 ± 0.012 | Deterministic models exact; GRU/XGBoost ± 0.02 (CPU threads differ) | Pass |
+| TC-C1 | All baselines | `python scripts/run_baselines.py --data data/dataset1_sessions.json --out runs/baselines_v2b.json` | timing 0.667 · text 0.765 · text-cmds 0.737 · XGBoost 0.694 ± 0.001 · GRU 0.713 ± 0.014 · GRU-cmds 0.721 ± 0.012 | Deterministic models exact; GRU/XGBoost ± 0.02 (CPU threads differ) | Pass |
 | TC-C2 | Prediction file | after TC-C1: `runs/baselines_v2b_predictions.json` exists | Per-session probabilities for every model, seed and prefix | — | Pass |
 
 ### D. Model 3 (LLM)
 
 | ID | Test | Steps | Expected | Status |
 |---|---|---|---|---|
-| TC-D1 | **Smoke test** (E2) | In `notebooks/qlora_generative_patched.ipynb` set `SMOKE = True`, `DATA_PATH = "data/v2b/dataset4_llm_sequences.jsonl"`, run all | Finishes in minutes; prints "dropped 0 duplicates"; writes `qlora_patched_results.json`; no "unknown" from parse failures | Pass on CPU with a tiny random model (2026-11-04); superseded by the full GPU runs (TC-D2) |
+| TC-D1 | **Smoke test** (E2) | In `notebooks/qlora_generative_patched.ipynb` set `SMOKE = True`, `DATA_PATH = "data/dataset4_llm_sequences.jsonl"`, run all | Finishes in minutes; prints "dropped 0 duplicates"; writes `qlora_patched_results.json`; no "unknown" from parse failures | Pass on CPU with a tiny random model (2026-11-04); superseded by the full GPU runs (TC-D2) |
 | TC-D2 | **Full run** (E2) | `SMOKE = False`, same data | 3 seeds; per seed: epoch log with validation macro-F1, early stop, test at k=1/3/5/full, latency p50/p95; mean ± std summary | **Pass** (RTX 3070 Ti, not T4): v2b and v3, 3 seeds each (`docs/TEST_RESULTS_SABRINA.md` §3.9–§3.11) |
 | TC-D3 | Commands-only + real humans (E2) | `COMMANDS_ONLY = True`, `EXTERNAL_TEST_PATH = "external/kypo/kypo_sessions_ds4_commands_only.jsonl"` | Same outputs, plus "external real humans labelled AI: x ± y" | **Pass** (RTX 3070 Ti): Model 3 and v4 on v3, 3 seeds, KYPO and KYPO2 (`docs/TEST_RESULTS_SABRINA.md` §3.12–§3.13) |
 | TC-D4 | Truncation safety | Long v2b sessions (more than 1024 tokens) | Prompt ≤ 1024 tokens, newest step kept, answer never cut | Pass |
@@ -83,7 +85,7 @@ Columns: **Status** = result in the development environment on 2026-11-04. Fill 
 
 **Fix these before looking at any test result:**
 
-1. **Data and split:** `data/v2b` now; `data/v3` for the final report. Same file and same split for every model.
+1. **Data and split:** v2b (`data/`) during development; v3 (`data/v3/`) for the final report. Same file and same split for every model.
 2. **Validation:** each training script carves validation from `train`. Settings (epochs, LR, LoRA rank, model size) are chosen on **validation only**. The test set is scored once per final configuration.
 3. **Equal effort:** every model gets the same number of tuning trials. Defaults for the baselines; if the LLM gets N trials, so does at least the best baseline.
 4. **Seeds:** 3 (42, 123, 456) for every seeded model. Report mean ± std, never the best seed.
