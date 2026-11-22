@@ -118,7 +118,7 @@ python scripts/compare_models.py --data data/v3/dataset1_sessions.json --baselin
 | **v3** | `data/v3/` | 1,705 / 1,113 | **Final evaluation.** Every test session is new. 287 of the 605 AI test sessions come from real LLM agents. |
 | v2b | `data/` | 1,482 / 830 | Development. Its test set was used to make decisions, so its scores are biased upward. |
 | KYPO | `external/kypo/` | test only, 1,414 | Real people (security trainees), commands only. Also used to calibrate simulated human timing. |
-| KYPO2 | `external/kypo2/` (not in git; build it with USER_MANUAL §5.3) | test only, 215 | Real people, commands only, fully independent |
+| KYPO2 | `external/kypo2/` | test only, 215 | Real people, commands only, fully independent |
 | Cowrie | `external/cowrie/cowrie.json` | unlabelled | Live honeypot traffic: case studies and demo only |
 
 **v3 splits are group-disjoint** (nothing in the test set was seen in training):
