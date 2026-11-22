@@ -1,6 +1,6 @@
 # HoneyAI user manual
 
-**Version:** 2026-11-18. It matches `main` at commit `6d1859d` (pull request #2 and #3 merged).
+**Version:** 2026-11-22. It matches `main` after pull requests #2 and #3, with the results doc named `docs/TEST_RESULTS_SABRINA.md` and the v3 notebook set to Model 3.
 **Project:** ICT3214 Security Analytics, Coursework 2 (Group 18).
 
 This manual explains how to install HoneyAI, run every part of it, reproduce the reported results and read the
@@ -12,7 +12,7 @@ output. It is written for three kinds of reader:
 | **Team member** who needs to retrain or re-evaluate a model | §3 Installation, §5 Data, then the section for that part |
 | **Honeypot operator** who wants to classify live sessions | §11 Dashboard and Cowrie parser |
 
-The results themselves are in `docs/TEST_RESULTS_SABRINA - FINAL.md`. The test protocol and every pre-declared
+The results themselves are in `docs/TEST_RESULTS_SABRINA.md`. The test protocol and every pre-declared
 decision are in `docs/TEST_PLAN.md`. This manual does not repeat their analysis, only the numbers you need to
 check that a run worked.
 
@@ -393,8 +393,8 @@ python scripts/text_baseline.py --no-responses   # commands only
 1. **Open the notebook** in Jupyter (`jupyter lab`) or VS Code, and select the `.venv` kernel.
 2. **Paste the settings for the run you want** from §8.3 into the **settings cell** (cell 2), replacing its lines.
 
-   > The settings cell keeps whatever the last person ran. On `main`, the v3 notebook is currently set for the
-   > zero-shot Qwen-7B run, and the v4 notebook for the commands-only KYPO2 run. Always set it explicitly.
+   > The settings cell keeps whatever the last person ran. The v3 notebook is committed with preset A (Model 3);
+   > the v4 notebook with the commands-only KYPO2 run (preset D). Always check it before running.
 
 3. **Kernel → Restart Kernel and Run All Cells.**
 4. **Check the first output lines** (§8.4).
