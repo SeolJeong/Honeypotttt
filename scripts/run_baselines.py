@@ -90,7 +90,7 @@ def onehot_probs(labels_idx):
     return p
 
 
-# ── timing ──
+# Timing
 def timing_feats(s):
     g = [st["inter_command_gap_s"] for st in s["interactions"][1:]] or [s["interactions"][0]["inter_command_gap_s"]]
     return [float(np.mean(g)), float(np.min(g)), float(np.std(g))]
@@ -102,7 +102,7 @@ def fit_timing(train):
     return lambda ss: m.predict_proba([timing_feats(s) for s in ss])
 
 
-# ── text ──
+# Text
 def fit_text(train, fmt):
     ex = make_examples(train, fmt, prefixes=True, max_prefixes=8)
     vec = TfidfVectorizer(token_pattern=r"[^\s]+", ngram_range=(1, 2), sublinear_tf=True)
@@ -111,7 +111,7 @@ def fit_text(train, fmt):
     return lambda ss: clf.predict_proba(vec.transform([e["text"] for e in make_examples(ss, fmt)]))
 
 
-# ── xgboost ──
+# XGBoost
 def fit_xgb(train, seed):
     X = np.array([[float(extract_one(s)[c]) for c in FEATURE_COLS] for s in train])
     y = np.array([LABEL2ID[s["actor_label"]] for s in train])
@@ -122,7 +122,7 @@ def fit_xgb(train, seed):
     return lambda ss: clf.predict_proba(np.array([[float(extract_one(s)[c]) for c in FEATURE_COLS] for s in ss]))
 
 
-# ── gru ──
+# GRU
 def gru_ready(sessions, commands_only):
     out = []
     for s in sessions:

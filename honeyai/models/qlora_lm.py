@@ -1,10 +1,10 @@
-"""Part 7: QLoRA fine-tuned LM utilities (Model 3).
+"""Part 7: helpers for the team's first QLoRA script (scripts/train_qlora_local.py).
 
 Shared constants and helpers for Colab training + local integration.
 The actual training runs on a Colab GPU notebook.
 
 Usage:
-    Training: paste the Colab cells (see project handoff)
+    Training: scripts/train_qlora_local.py (the reported Model 3 is notebooks/qlora_generative_patched v3.ipynb)
     Results:  qlora_lm.load_predictions("data/qlora_predictions.json")
 """
 from __future__ import annotations

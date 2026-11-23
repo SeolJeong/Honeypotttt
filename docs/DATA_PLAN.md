@@ -3,9 +3,9 @@
 > **Historical planning document, kept as written on 2026-11-04.** Its status table (§1) is out of date: since
 > then, Model 3 was trained and evaluated, the timing baseline, the Cowrie parser and the real-agent dataset (v3)
 > were built, and real-human collection was dropped. For the current state see `README.md`,
-> `docs/USER_MANUAL.md`, `docs/TEST_RESULTS_SABRINA.md` and `docs/DATA_CARDS.md`.
+> `USER_MANUAL.md`, `docs/TEST_RESULTS_SABRINA.md` and `docs/DATA_CARDS.md`.
 
-Every number and link in this file was re-checked against the actual files or sources on 2026-11-03/04. Items marked **NOT BUILT** don't exist yet. Nothing here has been committed.
+Every number and link in this file was re-checked against the actual files or sources on 2026-11-03/04. Items marked **NOT BUILT** don't exist yet.
 
 ---
 

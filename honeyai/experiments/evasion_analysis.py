@@ -1,4 +1,4 @@
-"""Part 8: Evasion experiments — the headline comparison.
+"""Part 8: Evasion experiments.
 
 Evaluates each model's robustness to evasion strategies by breaking down
 test-set performance per strategy. Runs three analyses:
@@ -22,7 +22,7 @@ from collections import Counter, defaultdict
 import numpy as np
 from sklearn.metrics import f1_score, classification_report
 
-# --- paths ---
+# Paths
 # Data set: v3 (final, fresh test set) by default. Set HONEYAI_DATA_DIR=data to reproduce the earlier v2b numbers.
 # QLoRA = final Model 3 (3-seed ensemble, data/v3/qlora_predictions.json; see docs/TEST_RESULTS_SABRINA.md §3.10).
 DATA_DIR = os.environ.get("HONEYAI_DATA_DIR", os.path.join("data", "v3"))
@@ -34,9 +34,7 @@ LABEL_MAP = {"human": 0, "scripted": 1, "AI-driven": 2}
 LABEL_NAMES = ["human", "scripted", "AI-driven"]
 
 
-# =====================================================================
-# LOAD DATA
-# =====================================================================
+# Load data
 
 def load_sessions():
     with open(DS1, encoding="utf-8") as f:
@@ -79,9 +77,7 @@ def load_qlora_predictions():
             out[sid] = {"true": true, "pred": pred}
     return out if out else None
 
-# =====================================================================
-# TRAIN MODELS (reimport from existing modules)
-# =====================================================================
+# Train models (same settings as the model modules)
 
 def train_xgboost(feature_cols, tag="full"):
     """Train XGBoost on specified features, return per-session test predictions."""
@@ -133,7 +129,7 @@ def train_gru(commands_only=False, tag="full"):
     train_sess = [s for s in sessions if s["split"] == "train"]
     test_sess = [s for s in sessions if s["split"] == "test"]
 
-    # --- vocab ---
+    # Vocab
     import re
     def tokenize(text):
         return [t for t in re.split(r"[^a-z0-9._/-]+", text.lower()) if t]
@@ -204,7 +200,7 @@ def train_gru(commands_only=False, tag="full"):
     enc_train = encode_sessions(train_sess)
     enc_test = encode_sessions(test_sess)
 
-    # --- model ---
+    # Model
     class GRU(nn.Module):
         def __init__(self, vocab_size, embed_dim, hidden_dim, n_classes=3, dropout=0.4, use_resp=True):
             super().__init__()
@@ -234,7 +230,8 @@ def train_gru(commands_only=False, tag="full"):
     vs = len(t2i)
     use_resp = not commands_only
 
-    # train over 3 seeds, pick best
+    # three seeds; keeps the one with the best test macro-F1, so this is a
+    # best-seed score, not the mean (the mean is in the results doc)
     best_f1 = -1
     best_preds = None
 
@@ -289,9 +286,7 @@ def train_gru(commands_only=False, tag="full"):
     return results, best_f1
 
 
-# =====================================================================
-# FEATURE SETS
-# =====================================================================
+# Feature sets
 
 ALL_FEATURES = [
     "session_duration_s", "command_count",
@@ -313,9 +308,7 @@ COMMANDS_ONLY_FEATURES = [
 ]
 
 
-# =====================================================================
-# ANALYSIS
-# =====================================================================
+# Analysis
 
 def get_evasion_map(sessions):
     """Map session_id -> evasion_strategy for test sessions."""
@@ -410,9 +403,7 @@ def per_strategy_ai_recall(predictions, evasion_map):
     return rows
 
 
-# =====================================================================
-# MAIN
-# =====================================================================
+# Main
 
 def print_table(title, rows, cols):
     """Print a simple ASCII table."""
@@ -436,7 +427,7 @@ def main():
         n = sum(1 for v in evasion_map.values() if v == ev)
         print(f"  {ev}: {n} sessions")
 
-    # ==== EXPERIMENT 1: full models, per-evasion breakdown ====
+    # Experiment 1: full models, per-evasion breakdown
     print("\n" + "=" * 60)
     print("EXPERIMENT 1: Per-evasion breakdown (full features)")
     print("=" * 60)
@@ -472,7 +463,7 @@ def main():
         print_table(f"{model_name} — AI-driven recall per evasion strategy",
                     rows, ["strategy", "n", "ai_recall"])
 
-    # ==== EXPERIMENT 2: evasive vs non-evasive ====
+    # Experiment 2: evasive vs non-evasive
     print("\n" + "=" * 60)
     print("EXPERIMENT 2: Non-evasive vs evasive (AI-driven only)")
     print("=" * 60)
@@ -494,7 +485,7 @@ def main():
                 ["model", "non_ev_n", "non_ev_recall", "evasive_n",
                  "evasive_recall", "recall_drop"])
 
-    # ==== EXPERIMENT 3: commands-only ablation ====
+    # Experiment 3: commands-only ablation
     print("\n" + "=" * 60)
     print("EXPERIMENT 3: Commands-only ablation")
     print("=" * 60)
@@ -520,7 +511,7 @@ def main():
         print_table(f"{model_name} — AI recall per evasion (commands-only)",
                     rows, ["strategy", "n", "ai_recall"])
 
-    # ==== SUMMARY ====
+    # Summary
     print("\n" + "=" * 60)
     print("SUMMARY")
     print("=" * 60)

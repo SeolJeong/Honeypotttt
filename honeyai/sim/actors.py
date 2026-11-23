@@ -12,7 +12,7 @@ Three kinds of actor, and they are NOT equally "real":
 The human and AI policies encode explicit assumptions about how those actors
 behave (listed in ASSUMPTIONS below and in data/v2/DATA_CARD.md). Any model
 trained on them partly learns these assumptions back. They are a bootstrap
-for building and debugging the pipeline; headline claims need real human
+for building and debugging the pipeline; claims about real actors need real human
 participants (scripts/collect_human.py) and real LLM agents
 (scripts/run_llm_agent.py).
 
@@ -59,7 +59,7 @@ GENERIC_DETOURS = ["pwd", "ls", "ls -la", "whoami", "id", "hostname", "uptime", 
 GUESS_DIRS = ["ls /opt", "ls /srv", "ls /var/lib", "ls /data", "ls /etc", "ls /var/backups", "ls /var/log"]
 
 
-# ── shared helpers ──────────────────────────────────────────────────────
+# Shared helpers
 
 def lognormal(rng, median, sigma):
     return median * math.exp(rng.gauss(0, sigma))
@@ -127,7 +127,7 @@ def gap_bin(s):
     return "short" if s < 2 else "medium" if s < 6 else "long" if s < 15 else "very_long"
 
 
-# ── session runner ──────────────────────────────────────────────────────
+# Session runner
 
 def run_session(sc: Scenario, policy) -> list[dict]:
     sh = Shell(sc)
@@ -152,7 +152,7 @@ def run_session(sc: Scenario, policy) -> list[dict]:
     return steps
 
 
-# ── chain-following policy (simulated humans and AI agents) ─────────────
+# Chain-following policy (simulated humans and AI agents)
 
 @dataclass
 class ChainParams:
@@ -264,7 +264,7 @@ class ChainPolicy:
         pass
 
 
-# ── humans (simulated personas) ─────────────────────────────────────────
+# Humans (simulated personas)
 
 # Per-persona think time: median ~ U(median_lo, median_hi), sigma ~ U(sigma_lo, sigma_hi).
 # Defaults reproduce data/v2. scripts/calibrate_human_timing.py fits them to real
@@ -302,7 +302,7 @@ def human_persona(pid: int):
     return params, timing
 
 
-# ── AI agents (simulated families) + evasion strategies ─────────────────
+# AI agents (simulated families) + evasion strategies
 
 def _style_c(cmd, rng):
     """Held-out family's own idioms (test only)."""
@@ -346,7 +346,7 @@ def ai_agent(family: str, evasion: str, rng: random.Random):
     return ChainPolicy(params, timing, rng, style=style)
 
 
-# ── scripted clients (real scripts) ─────────────────────────────────────
+# Scripted clients (real scripts)
 
 def task_script(sc: Scenario) -> list[str]:
     """What a task-aware attack script would run. It knows the app name and the

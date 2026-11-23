@@ -84,7 +84,7 @@ class Scenario:
     facts: dict = field(default_factory=dict)
 
 
-# ── scenario construction ───────────────────────────────────────────────
+# Scenario construction
 
 def _add(fs, path, content="", **kw):
     fs[path] = Node("f", content, **kw)
@@ -357,7 +357,7 @@ def _build_task(sc: Scenario, rng: random.Random):
         raise ValueError(t)
 
 
-# ── shell ───────────────────────────────────────────────────────────────
+# Shell
 
 class Shell:
     """Executes one command line against a scenario. Stateful only in cwd."""

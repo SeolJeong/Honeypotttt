@@ -95,6 +95,7 @@ Raw Cowrie log ──► Stage 1: authentication-noise filter (drops brute-force
 
 ```
 Honeypotttt/
+├── USER_MANUAL.md                 this manual
 ├── data/
 │   ├── dataset1..4 ...            v2b development data (2,312 sessions). Its test set was used during development.
 │   ├── qlora_predictions.json     early single-seed Model 3 run (v2b, 0.724). Used only when HONEYAI_DATA_DIR=data
@@ -119,7 +120,7 @@ Honeypotttt/
 ├── notebooks/                     Model 3 notebooks (v1, v2, v3 = Model 3, v4 = post hoc) + KYPO calibration
 ├── scripts/                       command-line entry points (§6–§12)
 ├── Test-Results-Sabrina/          every saved Model 3 / LLM result file (§13)
-├── docs/                          TEST_PLAN, test results, data cards, Docker and data-collection guides, this manual
+├── docs/                          TEST_PLAN, test results, data cards, Docker and data-collection guides
 ├── configs/                       agent list (configs/agents*.toml), calibrated human timing
 ├── contrib/                       raw recorded agent / human sessions
 ├── requirements-llm.txt           packages for Model 3

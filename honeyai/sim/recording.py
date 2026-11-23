@@ -104,7 +104,7 @@ def append_jsonl(path: str, sess: dict) -> None:
         f.write(json.dumps(sess, ensure_ascii=False) + "\n")
 
 
-# ── duplicate / leakage check ───────────────────────────────────────────
+# Duplicate / leakage check
 
 def _gap_bin_upper(s):
     return "SHORT" if s < 2 else "MEDIUM" if s < 6 else "LONG" if s < 15 else "VERY_LONG"

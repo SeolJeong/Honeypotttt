@@ -158,12 +158,12 @@ def train_and_evaluate(seed=42):
     print(f"train label dist: {dict(Counter(y_train))}")
     print(f"test  label dist: {dict(Counter(y_test))}")
 
-    # --- grouped CV on training split ---
+    # Grouped CV on training split
     print("\n--- cross-validation (training split) ---")
     groups = build_groups(data["train_rows"], n_splits=3)
     cross_validate(X_train, y_train, groups, n_splits=3, seed=seed)
 
-    # --- final model on full training split ---
+    # Final model on full training split
     print("\n--- held-out test evaluation ---")
     weights = class_weights(y_train)
     sample_w = np.array([weights[label] for label in y_train])
@@ -192,7 +192,7 @@ def train_and_evaluate(seed=42):
     for i, row in enumerate(cm):
         print(f"  {LABEL_NAMES[i]:>10s}  {row}")
 
-    # --- feature importance ---
+    # Feature importance
     print("\nfeature importance (gain):")
     importances = clf.feature_importances_
     ranked = sorted(zip(FEATURE_COLS, importances), key=lambda x: -x[1])

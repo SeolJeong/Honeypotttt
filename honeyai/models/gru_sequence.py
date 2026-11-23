@@ -49,7 +49,7 @@ N_ONEHOT = len(TIMING_BINS) + len(RESP_CATS)  # 10
 N_SCALAR = 4        # has_typo, progress, cmd_len_norm, gap_norm
 
 
-# ── tokeniser + vocabulary ──────────────────────────────────────────────
+# Tokeniser + vocabulary
 
 def tokenize(text: str) -> list[str]:
     """Lowercase, split on non-alphanumeric (keep paths and flags)."""
@@ -78,7 +78,7 @@ class Vocab:
         return len(self.t2i)
 
 
-# ── data loading + encoding ─────────────────────────────────────────────
+# Data loading + encoding
 
 def load_sessions():
     """Load dataset1, split into train/test lists."""
@@ -147,7 +147,7 @@ def encode_sessions(sessions: list[dict], vocab: Vocab) -> dict:
     }
 
 
-# ── model ────────────────────────────────────────────────────────────────
+# Model
 
 class GRUClassifier(nn.Module):
     """Single-layer GRU with token-averaged embeddings per step."""
@@ -176,7 +176,7 @@ class GRUClassifier(nn.Module):
         return self.head(self.drop(h.squeeze(0)))            # (B, 3)
 
 
-# ── training helpers ─────────────────────────────────────────────────────
+# Training helpers
 
 def _subset(data: dict, idx) -> dict:
     """Slice all tensors in a data dict by the given indices."""
@@ -256,7 +256,7 @@ def _predict(model, data):
     return logits.argmax(dim=1).numpy()
 
 
-# ── main routines ────────────────────────────────────────────────────────
+# Main routines
 
 def cross_validate(train_sess, enc_train, vocab_size, n_splits=3, seed=42):
     """Grouped stratified CV on the training split."""
@@ -298,11 +298,11 @@ def train_and_evaluate(seeds=(42, 123, 456)):
     vs = len(vocab)
     print(f"vocab: {vs} tokens\n")
 
-    # --- grouped CV on training split ---
+    # Grouped CV on training split
     print("--- cross-validation (training split) ---")
     cross_validate(train_sess, enc_train, vs, n_splits=3, seed=42)
 
-    # --- held-out test (3 seeds, report mean +/- std) ---
+    # Held-out test (3 seeds, report mean +/- std)
     print("\n--- held-out test evaluation ---")
     seed_f1s = []
     best_f1, best_preds = -1.0, None

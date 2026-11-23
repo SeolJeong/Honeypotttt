@@ -1,7 +1,7 @@
 """Shared evaluation for the text models (QLoRA LM and the TF-IDF floor).
 
 Every model returns a probability matrix (n_examples x 3, LABELS order); this
-module turns it into the spec section 13 metrics so all text models are
+module turns it into the metrics below so all text models are
 scored identically:
 
   macro-F1, per-class P/R/F1, confusion matrix
@@ -37,7 +37,7 @@ def expected_calibration_error(probs: np.ndarray, y: np.ndarray, n_bins: int = 1
 
 
 def structured(probs_row: np.ndarray, abstain_below: float = 0.0) -> dict:
-    """The spec section 8 output contract: {"class": ..., "confidence": ...}."""
+    """Output format: {"class": ..., "confidence": ...}."""
     i = int(np.argmax(probs_row))
     conf = float(probs_row[i])
     cls = LABELS[i] if conf >= abstain_below else "unknown"

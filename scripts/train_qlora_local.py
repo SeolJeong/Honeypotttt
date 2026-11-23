@@ -19,7 +19,7 @@ from transformers import (
 from peft import LoraConfig, get_peft_model
 from sklearn.metrics import classification_report, confusion_matrix, f1_score
 
-# --- config ---
+# Config
 MODEL_ID = "Qwen/Qwen2.5-0.5B-Instruct"
 DS4 = os.path.join("data", "dataset4_llm_sequences.jsonl")
 OUT = os.path.join("data", "qlora_predictions.json")
@@ -52,7 +52,7 @@ LORA_CONFIG = LoraConfig(
 )
 
 
-# --- helpers ---
+# Helpers
 def format_messages(text, label=None):
     msgs = [
         {"role": "system", "content": SYSTEM_PROMPT},

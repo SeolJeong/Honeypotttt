@@ -20,7 +20,7 @@ unzip -q -o honeyai_code.zip -d honeyai && unzip -q -o honeyai_datasets.zip -d h
 pip install -q xgboost            # E1; E2 also: pip install -q -r requirements-llm.txt
 ```
 
-**Out of scope here:** collecting real participant data (dropped, see `docs/HUMAN_COLLECTION.md`) and an API. The dashboard and Cowrie parser (Part 9) are covered in `docs/USER_MANUAL.md` §11.
+**Out of scope here:** collecting real participant data (dropped, see `docs/HUMAN_COLLECTION.md`) and an API. The dashboard and Cowrie parser (Part 9) are covered in `USER_MANUAL.md` §11.
 
 **Paths:** this plan was written while v2b lived in `data/v2b/`. In the repository, v2b is in `data/` and the final set in `data/v3/`; the commands below use the repository paths.
 

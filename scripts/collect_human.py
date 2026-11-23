@@ -8,7 +8,7 @@ task progress, anonymous participant id. No names, no keystrokes, no IP.
 Sessions append to contrib/human_<participant>.jsonl.
 
 Check with your lecturer whether ethics approval / a consent form is needed
-before recording anyone (spec section 6).
+before recording anyone.
 """
 from __future__ import annotations
 

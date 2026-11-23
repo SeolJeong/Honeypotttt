@@ -1,6 +1,6 @@
 """TF-IDF + logistic regression on the exact same text the LM sees.
 
-Not one of the three spec models: it is a cheap floor. If the QLoRA LM does
+Not one of the three main models: a cheap reference baseline. If the QLoRA LM does
 not beat this, "pretrained LM semantics help" is not supported, whatever the
 GRU does. Uses the same formatter, splits, prefixes and metrics as Model 3.
 

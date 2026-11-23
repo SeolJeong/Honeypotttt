@@ -1,6 +1,7 @@
 """HoneyAI Model 3 (QLoRA LLM): plain-Python version of notebooks/qlora_generative_patched.ipynb.
 
 Same code as the notebook (generated from it), with command-line options instead of a settings cell.
+Comments marked "fix #N" refer to the fixes table at the top of the notebook.
 Run from the repo root, with the venv active:
 
     python scripts/train_llm.py --smoke                                   # pipeline check (minutes)
@@ -12,7 +13,7 @@ Run from the repo root, with the venv active:
 Then: python scripts/compare_models.py --llm results_main.json
 """
 
-# ── settings (change here; choose values on VALIDATION results only) ──
+# Settings (change here; choose values on validation results only)
 import os
 if os.path.basename(os.getcwd()) == "notebooks" and os.path.isdir(os.path.join("..", "data")):
     os.chdir("..")          # opened locally in Jupyter: work from the repo root
@@ -28,7 +29,7 @@ GRAD_ACCUM = 2
 MAX_LEN = 768               # tokens; transcripts longer than this lose their OLDEST steps
 VAL_FRAC = 0.15
 VAL_MODE = "shift"          # "shift": validation mirrors the test shift (unseen AI strategy + unseen scripted family,
-                            #          picked by a fixed rule, seed 2026) and is scored on FULL sessions (the selection metric)
+                            #          picked by a fixed rule, seed 2026) and is scored on full sessions (the selection metric)
                             # "random": old behaviour (~VAL_FRAC of every cell; in-distribution, over-optimistic)
 VAL_RULE_SEED = 2026        # fixed before any results; do not change after seeing test numbers
 PREFIX_TRAIN = True         # also train on partial sessions (online scoring)
@@ -46,7 +47,7 @@ SMOKE = False               # True: tiny subset, 1 seed, 1 epoch (pipeline check
 RESULTS_NAME = "qlora_patched_results.json"   # output file (rename per run, e.g. results_main.json)
 
 
-# ── command-line overrides (plain-Python version only) ──
+# Command-line overrides (plain-Python version only)
 import argparse
 _ap = argparse.ArgumentParser(description="HoneyAI Model 3 (QLoRA). Same code as notebooks/qlora_generative_patched.ipynb")
 _ap.add_argument("--data", default=DATA_PATH, help="dataset4 jsonl (default: main's data/)")
@@ -117,7 +118,7 @@ if ZERO_SHOT:   # an untrained model needs the class definitions (same wording a
     SEEDS = SEEDS[:1]          # no training, so there is no seed variance
 
 
-# ── load + deduplicate (fix #1) ──
+# Load + deduplicate (fix #1)
 if DATA_PATH is not None and not os.path.exists(DATA_PATH):
     print(f"{DATA_PATH} not found (cwd {os.getcwd()})")
     DATA_PATH = None
@@ -164,7 +165,7 @@ print("train:", Counter(r["actor_label"] for r in train_all))
 print("test: ", Counter(r["actor_label"] for r in test_recs))
 
 
-# ── validation split from TRAIN only (fix #2) ──
+# Validation split from train only (fix #2)
 # humans: whole participants held out if participant_id exists (v2+), otherwise sessions;
 # scripted / AI: ~VAL_FRAC of each (family, evasion) cell. The test set is never touched.
 def shift_holdouts(recs):
@@ -206,7 +207,7 @@ def val_split(recs, seed):
             [r for r in recs if r["session_id"] in val_ids])
 
 
-# ── transcript handling: prefixes + left truncation (fixes #7, #8) ──
+# Transcript handling: prefixes + left truncation (fixes #7, #8)
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
@@ -252,7 +253,7 @@ _TEMPLATE_OVERHEAD = len(_chat_ids(
      {"role": "assistant", "content": target_text("AI-driven")}]))
 
 def prompt_ids(transcript):
-    # tokenised chat prompt (system + user + assistant header); transcript cut from the LEFT
+    # tokenised chat prompt (system + user + assistant header); transcript cut from the left
     ids = tokenizer(transcript, add_special_tokens=False)["input_ids"]
     budget = MAX_LEN - _TEMPLATE_OVERHEAD - 8
     if len(ids) > budget:
@@ -273,7 +274,7 @@ ANSWER_IDS = {l: answer_ids(l) for l in LABELS}
 print("answer tokens per label:", {l: len(v) for l, v in ANSWER_IDS.items()})
 
 
-# ── dataset, collator, class-weighted trainer (fix #4) ──
+# Dataset, collator, class-weighted trainer (fix #4)
 class SessionDS(torch.utils.data.Dataset):
     def __init__(self, exs, weights):
         self.items = []
@@ -304,7 +305,7 @@ def _lm(model):
 
 class WeightedTrainer(Trainer):
     def compute_loss(self, model, inputs, return_outputs=False, num_items_in_batch=None):
-        # speed: run the 151k-word output layer ONLY at the ~10 answer positions, not at every token
+        # speed: run the 151k-word output layer only at the ~10 answer positions, not at every token
         w = inputs.pop("weight")
         labels = inputs.pop("labels")
         lm = _lm(model)
@@ -320,7 +321,7 @@ class WeightedTrainer(Trainer):
         return (loss, None) if return_outputs else loss
 
 
-# ── prediction by scoring all 3 labels (fix #3): real probabilities, no parsing ──
+# Prediction by scoring all 3 labels (fix #3): real probabilities, no parsing
 @torch.no_grad()
 def predict_proba(model, exs):
     # SCORE_BATCH sessions x 3 labels per forward pass; output layer only at answer positions
@@ -373,7 +374,7 @@ def ece(probs, y, bins=15):
     return float(e)
 
 
-# ── early stopping on validation (fix #2) ──
+# Early stopping on validation (fix #2)
 class EarlyStopOnVal(TrainerCallback):
     def __init__(self, model, val_ex):
         self.model, self.val_ex = model, val_ex
@@ -437,7 +438,7 @@ def run_seed(seed):
         report_to="none", seed=seed, remove_unused_columns=False, use_cpu=not CUDA)
     if ZERO_SHOT:                                          # no training: LoRA starts as a no-op (B = 0)
         # domain-context calibration (Fei et al. 2023): the model's average prediction on a
-        # sample of TRAINING transcripts (text only, labels unused) estimates its label bias
+        # sample of training transcripts (text only, labels unused) estimates its label bias
         cal = random.Random(seed).sample(tr_ex, min(60, len(tr_ex)))
         ZS_CF = predict_proba(model, cal).mean(0)
         print("  label bias on training transcripts:", {l: round(float(x), 3) for l, x in zip(LABELS, ZS_CF)})
@@ -480,7 +481,7 @@ def run_seed(seed):
     full = res["by_prefix"]["full"]
     print("  full-session confusion (rows=true, cols=pred)", LABELS, full["confusion"])
     print("  AI recall by strategy:", {s: round(v, 2) for s, v in full["ai_recall_by_strategy"].items()})
-    # per-command update latency (RQ3): score one partial session (3 commands) at a time
+    # per-command update latency: score one partial session (3 commands) at a time
     lat = []
     for e in examples(test_recs[:50], k=3):
         t0 = time.perf_counter()
@@ -508,7 +509,7 @@ def run_seed(seed):
     return res
 
 
-# ── run all seeds; report MEAN +/- STD (never the best test seed) ──
+# Run all seeds; report mean +/- std (never the best test seed)
 RUN_TAG = (f"{'zs' if ZERO_SHOT else 'ft'}_{'cmds' if COMMANDS_ONLY else 'full'}"
            f"{'' if PREFIX_TRAIN else '_noprefix'}{'_shiftval' if VAL_MODE == 'shift' else ''}_{MODEL_ID.split('/')[-1]}{'_smoke' if SMOKE else ''}")
 os.makedirs(RESULTS_DIR, exist_ok=True)

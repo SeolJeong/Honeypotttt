@@ -10,7 +10,7 @@ The dataset has 1,000 auth records:
 
 We train a simple logistic-regression classifier on three numeric features
 and report accuracy + per-class metrics with stratified cross-validation.
-In production this runs as a gate on live Cowrie traffic.
+It is meant to run as a gate in front of Stage 2.
 
 Usage:
     python -m honeyai.stage1_filter          # train + evaluate

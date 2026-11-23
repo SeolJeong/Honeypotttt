@@ -7,7 +7,7 @@ ICT3214 Security Analytics, Coursework 2 (Group 18).
 
 | Document | What it contains |
 |---|---|
-| **[`docs/USER_MANUAL.md`](docs/USER_MANUAL.md)** | How to install, run and reproduce everything (start here) |
+| **[`USER_MANUAL.md`](USER_MANUAL.md)** | How to install, run and reproduce everything (start here) |
 | [`docs/TEST_RESULTS_SABRINA.md`](docs/TEST_RESULTS_SABRINA.md) | Every Model 3 run, the paired comparisons, the comparison with outside solutions, and the real-human checks |
 | [`docs/TEST_PLAN.md`](docs/TEST_PLAN.md) | Test cases, benchmarking protocol, and the decisions declared before each result was seen |
 | [`data/v3/DATA_CARD.md`](data/v3/DATA_CARD.md), [`docs/DATA_CARDS.md`](docs/DATA_CARDS.md), [`docs/DATA_PLAN.md`](docs/DATA_PLAN.md) | How the datasets were built, and their rules of use |
@@ -145,6 +145,7 @@ python scripts/compare_models.py --data data/v3/dataset1_sessions.json --baselin
 
 ```
 Honeypotttt/
+├── USER_MANUAL.md               how to install, run and reproduce everything
 ├── data/                        v2b (development) + v3/ (final) datasets; qlora_predictions.json files for Part 8 / dashboard
 ├── external/                    KYPO, KYPO2 (real humans) and the Cowrie log
 ├── honeyai/
@@ -159,7 +160,7 @@ Honeypotttt/
 ├── notebooks/                   Model 3: qlora_generative_patched v3.ipynb (reported model), v4.ipynb (post hoc), earlier versions
 ├── scripts/                     entry points: baselines, comparisons, data generation and collection, KYPO, Part 8/9
 ├── Test-Results-Sabrina/        every saved LLM result file used in the reported numbers
-├── docs/                        manual, test plan, test results, data cards, collection guides
+├── docs/                        test plan, test results, data cards, collection guides
 ├── configs/                     real-agent list, calibrated human timing
 ├── contrib/                     raw recorded agent and human sessions
 ├── requirements-llm.txt         Model 3 packages

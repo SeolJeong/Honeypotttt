@@ -1,4 +1,4 @@
-"""Session -> LM input text (spec section 7), with ablation switches.
+"""Session -> LM input text, with ablation switches.
 
 Pure Python, no torch/transformers dependency, so it can be shared by the
 QLoRA model, the text baseline, the dashboard and the online scorer.
@@ -9,7 +9,7 @@ Output format (one block per interaction, oldest first):
     ACTION: cat /etc/application.conf
     RESULT [not_found_with_hint]: No such file or directory. Try /opt/app/config instead.
 
-Ablation switches map directly onto Experiment 6:
+Ablation switches:
     include_responses=False   -> "commands only" (the central ablation)
     include_timing=False      -> "without timing"
     include_category=False    -> drop the [response_category] tag
@@ -107,7 +107,7 @@ def build_prompt(steps: list[dict], cfg: FormatConfig = FormatConfig(),
             f"\n\n### ACTOR:")
 
 
-# ── dataset construction ────────────────────────────────────────────────
+# Dataset construction
 
 def load_sessions(path: str = DS1) -> list[dict]:
     with open(path, encoding="utf-8") as f:
@@ -133,7 +133,7 @@ def make_examples(sessions: list[dict], cfg: FormatConfig = FormatConfig(),
     """Turn sessions into model examples.
 
     prefixes=True  -> one example per prefix length 1..n (online training:
-                      the model must classify partial traces, spec section 10)
+                      the model must classify partial traces)
     k=int          -> only the first k steps of every session (early
                       attribution eval). Sessions shorter than k are used
                       in full, and `steps_seen` records what was really seen.
@@ -200,7 +200,7 @@ def grouped_val_split(train: list[dict], seed: int = 0,
 
 
 def select_round(sessions: list[dict], round_: int) -> list[dict]:
-    """Training-pool filter for the adversarial rounds (spec section 9).
+    """Training-pool filter for the adversarial rounds.
 
     round 0 -> non-evasive training only (evasion_strategy == 'none')
     round 2 -> non-evasive + the training-split evasion strategies

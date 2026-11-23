@@ -24,7 +24,7 @@ DATA_DIR = "data"
 DS1 = os.path.join(DATA_DIR, "dataset1_sessions.json")
 DS4 = os.path.join(DATA_DIR, "dataset4_llm_sequences.jsonl")
 
-# --- GAP bins (must match the team's dataset4 convention) ---
+# Gap bins (must match the team's dataset4 convention)
 GAP_BINS = [
     (2.0,  "SHORT"),
     (6.0,  "MEDIUM"),

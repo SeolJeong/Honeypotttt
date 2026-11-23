@@ -1,4 +1,7 @@
-"""Part 7: QLoRA fine-tuned language model detector (Model 3).
+"""Part 7: QLoRA detector with a classification head (an earlier Model 3 variant).
+
+Not the reported Model 3, which is notebooks/qlora_generative_patched v3.ipynb
+(label scoring with the chat model, no extra head).
 
 A small pretrained decoder LM (default Qwen2.5-0.5B) is loaded in 4-bit NF4,
 LoRA adapters are trained on top, and a 3-way classification head reads the
@@ -12,7 +15,7 @@ Why a classification head instead of generating JSON text:
   - the required {"class", "confidence"} contract is produced by wrapping the
     probabilities (honeyai.llm.evaluate.structured).
 
-Training follows the spec: 4-bit QLoRA, fixed preprocessing, class weights,
+Training: 4-bit QLoRA, fixed preprocessing, class weights,
 early stopping on a leakage-safe validation split, >=3 seeds, adapters and
 the exact run config saved per seed.
 
@@ -87,7 +90,7 @@ class QLoRAConfig:
         return d
 
 
-# ── model construction ──────────────────────────────────────────────────
+# Model construction
 
 def _compute_dtype():
     if torch.cuda.is_available() and torch.cuda.is_bf16_supported():
@@ -151,7 +154,7 @@ def _tiny_model_for_smoke(texts: list[str]):
     return Qwen2ForSequenceClassification(conf), tok
 
 
-# ── batching ────────────────────────────────────────────────────────────
+# Batching
 
 def _batches(examples, tok, max_len, batch_size, shuffle, rng=None):
     idx = list(range(len(examples)))
@@ -190,7 +193,7 @@ def _class_weights(examples) -> torch.Tensor:
                         dtype=torch.float32)
 
 
-# ── training ────────────────────────────────────────────────────────────
+# Training
 
 def _set_seed(seed: int):
     random.seed(seed)
@@ -280,7 +283,7 @@ def _reload_best(model, save_dir):
     return model
 
 
-# ── latency (Experiment 7) ──────────────────────────────────────────────
+# Latency
 
 @torch.no_grad()
 def measure_latency(model, tok, examples, cfg: QLoRAConfig, n: int = 50) -> dict:
@@ -304,7 +307,7 @@ def measure_latency(model, tok, examples, cfg: QLoRAConfig, n: int = 50) -> dict
             "n": len(times), "device": dev.type, "peak_gpu_mem_mb": mem}
 
 
-# ── full experiment ─────────────────────────────────────────────────────
+# Full experiment
 
 def run(cfg: QLoRAConfig) -> dict:
     sessions = load_sessions(cfg.data_path)
@@ -384,7 +387,7 @@ def run(cfg: QLoRAConfig) -> dict:
     return summary
 
 
-# ── online scoring (for the API / dashboard, spec section 10) ───────────
+# Online scoring (for an API or the dashboard)
 
 class OnlineScorer:
     """Load a saved seed directory and score a growing session after every command.

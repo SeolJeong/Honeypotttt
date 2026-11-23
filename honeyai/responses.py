@@ -14,7 +14,7 @@ simulate(command, category) -> str
 """
 from __future__ import annotations
 
-# --- canned system facts (one consistent fake host) ------------------------
+# Canned system facts (one consistent fake host)
 HOST = "web01"
 KERNEL = f"Linux {HOST} 5.15.0-91-generic #101-Ubuntu SMP x86_64 GNU/Linux"
 USERS = ["root", "www-data", "deploy", "backup", "sysadmin"]

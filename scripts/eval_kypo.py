@@ -1,8 +1,8 @@
 """Real-human check: how often do commands-only models call real KYPO humans AI?
 
 Every KYPO session is a real person, so the only possible errors are
-"human -> scripted" and "human -> AI-driven". The headline number is the
-HUMAN FALSE-ATTRIBUTION RATE (share of real human sessions labelled AI-driven).
+"human -> scripted" and "human -> AI-driven". The main number is the
+human false-attribution rate (share of real human sessions labelled AI-driven).
 
 KYPO has no command outputs, so only models that ignore responses are valid:
   - text-cmds: TF-IDF + logistic regression on commands + timing tokens
