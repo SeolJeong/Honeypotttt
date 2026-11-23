@@ -1,8 +1,5 @@
 # HoneyAI user manual
 
-**Version:** 2026-11-22. It matches `main` after pull requests #2 and #3, with the results doc named `docs/TEST_RESULTS_SABRINA.md` and the v3 notebook set to Model 3.
-**Project:** ICT3214 Security Analytics, Coursework 2 (Group 18).
-
 This manual explains how to install HoneyAI, run every part of it, reproduce the reported results and read the
 output. It is written for three kinds of reader:
 
