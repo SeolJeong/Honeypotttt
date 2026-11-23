@@ -666,7 +666,7 @@ from bootstrapping whole trainees (5,000 resamples), because one person contribu
 The teammate's Part 8 code (`honeyai/experiments/evasion_analysis.py`), unchanged except for the data path:
 - the data is v3 (1,113 test sessions; 545 evasive AI sessions);
 - the QLoRA input is the final Model 3, as the 3-seed ensemble;
-- XGBoost and the GRU are trained inside the script with one seed each.
+- XGBoost is trained inside the script with one seed (42); the GRU is trained with seeds 42, 123 and 456 and the seed with the best test macro-F1 is kept (its 3-seed mean is 0.763 ± 0.013, §3.10).
 
 It gave the same numbers on two machines: XGBoost 0.645 vs 0.644, the GRU 0.774, and QLoRA 0.796 in both.
 
@@ -709,7 +709,7 @@ covers the real LLM agents only (all 5 families), computed from the §3.10 model
 - It now shows v3 with the final Model 3: XGBoost 0.644, GRU 0.774, QLoRA 0.796.
 - A caption names the data and predictions files.
 - Checked by screenshot on 2026-11-18.
-- As with Part 8, its XGBoost and GRU use one seed while QLoRA is the 3-seed ensemble, so the dashboard is a demo and §3.10 holds the comparison.
+- As with Part 8, its XGBoost uses one seed and its GRU the best of three seeds by test F1, while QLoRA is the 3-seed ensemble, so the dashboard is a demo and §3.10 holds the comparison.
 
 **Wild Cowrie sessions** (`python scripts/parse_cowrie.py external/cowrie/cowrie.json --classify`):
 - **The log:** 13,315 events, 1,708 raw sessions and 122 source IPs from the team's live honeypot (5 Nov 2026, 00:02–03:14 UTC).

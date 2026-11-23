@@ -609,7 +609,7 @@ python scripts/run_evasion_experiments.py | Tee-Object -FilePath evasion_results
 
 **What it does:**
 - reads v3 by default;
-- trains XGBoost and the GRU inside the script, with one seed each;
+- trains XGBoost inside the script with one seed (42), and the GRU with seeds 42, 123 and 456, keeping the seed with the best test macro-F1;
 - loads the final Model 3 predictions from `data/v3/qlora_predictions.json`.
 
 **It runs three experiments:**
@@ -665,7 +665,7 @@ streamlit run honeyai/dashboard.py        # or: python scripts/run_dashboard.py
 | **Wild Data** | Upload a parsed sessions file (e.g. `data/wild_sessions.json`). It shows the number loaded and, for each session (first 20), the step count, mean gap and first 5 commands | **Inspection only: this tab does not classify.** Classification is done by the parser (§11.3). |
 
 **Caveats to put in any figure caption:**
-- **The dashboard's XGBoost and GRU are trained with one seed, while QLoRA is the 3-seed ensemble.** The cards are a demonstration; the paired comparison (§9) is the result.
+- **The dashboard's XGBoost is one seed and its GRU is the best of three seeds chosen on the test set (optimistic), while QLoRA is the 3-seed ensemble.** The cards are a demonstration; the paired comparison (§9) is the result.
 - **The QLoRA card shows Model 3, not v4.**
 
 **Screenshots:**
